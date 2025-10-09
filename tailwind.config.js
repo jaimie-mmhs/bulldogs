@@ -8,8 +8,8 @@ export default {
     extend: {
       colors: {
         bulldog: {
-          blue: '#003366',
-          gold: '#F2C100'
+          orange: '#E65F0F',
+          black: '#000000'
         }
       }
     }

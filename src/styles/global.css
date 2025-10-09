@@ -4,4 +4,4 @@
 
 :root { color-scheme: light; }
 
-.prose a { @apply text-bulldog-gold underline; }
+.prose a { @apply text-bulldog-orange underline; }
