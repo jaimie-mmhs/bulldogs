@@ -7,25 +7,41 @@ const nav = site.nav;
     <a href="/" class="font-semibold text-lg tracking-wide text-bulldog-orange">{site.name}</a>
     <nav class="hidden md:flex gap-6">
       {nav.map((item) => (
-        item.children ? (
-          <div class="relative group">
-            <a href={item.href ?? '#'} class="hover:text-bulldog-orange inline-flex items-center">
-              {item.label}
+        <div class="relative group">
+          <a href={item.href ?? '#'} class="hover:text-bulldog-orange inline-flex items-center">
+            {item.label}
+            {item.children && (
               <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="ml-1 h-4 w-4 opacity-70 group-hover:opacity-100"><path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/></svg>
-            </a>
-            <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition pointer-events-none group-hover:pointer-events-auto absolute left-0 mt-2 min-w-[14rem] rounded-xl border bg-white shadow-lg">
+            )}
+          </a>
+          {item.children && (
+            <div class="absolute left-0 mt-2 min-w-[14rem] rounded-xl border bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible hover:opacity-100 hover:visible transition">
               <ul class="py-2">
                 {item.children.map((child) => (
-                  <li>
-                    <a class="block px-4 py-2 text-sm hover:bg-slate-50 hover:text-bulldog-orange" href={child.href}>{child.label}</a>
+                  <li class="relative group/child">
+                    <a class="block px-4 py-2 text-sm hover:bg-slate-50 hover:text-bulldog-orange whitespace-nowrap" href={child.href ?? '#'}>
+                      {child.label}
+                      {child.children && (
+                        <span class="absolute right-2 top-1/2 -translate-y-1/2 opacity-60">›</span>
+                      )}
+                    </a>
+                    {child.children && (
+                      <div class="absolute top-0 left-full min-w-[14rem] rounded-xl border bg-white shadow-lg opacity-0 invisible group-hover/child:opacity-100 group-hover/child:visible hover:opacity-100 hover:visible transition">
+                        <ul class="py-2">
+                          {child.children.map((gchild) => (
+                            <li>
+                              <a class="block px-4 py-2 text-sm hover:bg-slate-50 hover:text-bulldog-orange whitespace-nowrap" href={gchild.href}>{gchild.label}</a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </li>
                 ))}
               </ul>
             </div>
-          </div>
-        ) : (
-          <a class="hover:text-bulldog-orange" href={item.href}>{item.label}</a>
-        )
+          )}
+        </div>
       ))}
     </nav>
   </div>
