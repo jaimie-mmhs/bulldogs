@@ -5,28 +5,26 @@ const nav = site.nav;
 <header class="bg-white text-slate-800 border-b">
   <div class="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
     <a href="/" class="font-semibold text-lg tracking-wide text-bulldog-orange">{site.name}</a>
-    <nav class="hidden md:flex gap-6">
-      {nav.map((item) => (
-        <div class="relative group">
-          <a href={item.href ?? '#'} class="hover:text-bulldog-orange inline-flex items-center">
+    <nav class="hidden md:flex gap-6" id="main-nav">
+      {nav.map((item, i) => (
+        <div class="relative" data-menu>
+          <a href={item.href ?? '#'} class="hover:text-bulldog-orange inline-flex items-center" data-trigger>
             {item.label}
             {item.children && (
-              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="ml-1 h-4 w-4 opacity-70 group-hover:opacity-100"><path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="ml-1 h-4 w-4 opacity-70"><path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/></svg>
             )}
           </a>
           {item.children && (
-            <div class="absolute left-0 mt-2 min-w-[14rem] rounded-xl border bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible hover:opacity-100 hover:visible transition">
+            <div class="absolute left-0 mt-2 min-w-[14rem] rounded-xl border bg-white shadow-lg opacity-0 invisible transition" data-panel>
               <ul class="py-2">
-                {item.children.map((child) => (
-                  <li class="relative group/child">
-                    <a class="block px-4 py-2 text-sm hover:bg-slate-50 hover:text-bulldog-orange whitespace-nowrap" href={child.href ?? '#'}>
+                {item.children.map((child, j) => (
+                  <li class="relative" data-submenu>
+                    <a class="block px-4 py-2 text-sm hover:bg-slate-50 hover:text-bulldog-orange whitespace-nowrap" href={child.href ?? '#'} data-subtrigger>
                       {child.label}
-                      {child.children && (
-                        <span class="absolute right-2 top-1/2 -translate-y-1/2 opacity-60">›</span>
-                      )}
+                      {child.children && (<span class="absolute right-2 top-1/2 -translate-y-1/2 opacity-60">›</span>)}
                     </a>
                     {child.children && (
-                      <div class="absolute top-0 left-full min-w-[14rem] rounded-xl border bg-white shadow-lg opacity-0 invisible group-hover/child:opacity-100 group-hover/child:visible hover:opacity-100 hover:visible transition">
+                      <div class="absolute top-0 left-full min-w-[14rem] rounded-xl border bg-white shadow-lg opacity-0 invisible transition" data-subpanel>
                         <ul class="py-2">
                           {child.children.map((gchild) => (
                             <li>
@@ -44,5 +42,80 @@ const nav = site.nav;
         </div>
       ))}
     </nav>
+
+    <script is:inline>
+      // Hover-intent with delay so menus don't snap shut immediately
+      (function(){
+        const OPEN_DELAY = 80;   // ms before opening on hover
+        const CLOSE_DELAY = 250; // ms before closing after mouse leaves
+
+        const nav = document.getElementById('main-nav');
+        if(!nav) return;
+
+        function setupMenu(root){
+          const trigger = root.querySelector('[data-trigger]');
+          const panel = root.querySelector('[data-panel]');
+          if(!trigger || !panel) return;
+
+          let openTimer, closeTimer;
+          const open = () => {
+            clearTimeout(closeTimer);
+            openTimer = setTimeout(()=>{
+              panel.classList.remove('invisible','opacity-0');
+              panel.classList.add('visible','opacity-100');
+            }, OPEN_DELAY);
+          };
+          const close = () => {
+            clearTimeout(openTimer);
+            closeTimer = setTimeout(()=>{
+              panel.classList.add('invisible','opacity-0');
+              panel.classList.remove('visible','opacity-100');
+            }, CLOSE_DELAY);
+          };
+
+          // Top-level hover handling
+          trigger.addEventListener('mouseenter', open);
+          root.addEventListener('mouseenter', open);
+          root.addEventListener('mouseleave', close);
+          panel.addEventListener('mouseenter', () => { clearTimeout(closeTimer); });
+          panel.addEventListener('mouseleave', close);
+
+          // Keyboard accessibility
+          trigger.addEventListener('focus', open);
+          panel.addEventListener('focusin', () => { clearTimeout(closeTimer); });
+          panel.addEventListener('focusout', close);
+
+          // Second level inside this panel
+          panel.querySelectorAll('[data-submenu]').forEach((subRoot)=>{
+            const subTrig = subRoot.querySelector('[data-subtrigger]');
+            const subPanel = subRoot.querySelector('[data-subpanel]');
+            if(!subTrig || !subPanel) return;
+            let sOpenTimer, sCloseTimer;
+            const sOpen = () => {
+              clearTimeout(sCloseTimer);
+              sOpenTimer = setTimeout(()=>{
+                subPanel.classList.remove('invisible','opacity-0');
+                subPanel.classList.add('visible','opacity-100');
+              }, OPEN_DELAY);
+            };
+            const sClose = () => {
+              clearTimeout(sOpenTimer);
+              sCloseTimer = setTimeout(()=>{
+                subPanel.classList.add('invisible','opacity-0');
+                subPanel.classList.remove('visible','opacity-100');
+              }, CLOSE_DELAY);
+            };
+            subTrig.addEventListener('mouseenter', sOpen);
+            subRoot.addEventListener('mouseenter', sOpen);
+            subRoot.addEventListener('mouseleave', sClose);
+            subPanel.addEventListener('mouseenter', ()=>clearTimeout(sCloseTimer));
+            subPanel.addEventListener('mouseleave', sClose);
+            subTrig.addEventListener('focus', sOpen);
+          });
+        }
+
+        nav.querySelectorAll('[data-menu]').forEach(setupMenu);
+      })();
+    </script>
   </div>
 </header>
