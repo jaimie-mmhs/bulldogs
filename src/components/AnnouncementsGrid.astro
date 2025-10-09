@@ -1,0 +1,18 @@
+interface Ann {
+  data: { title: string; href?: string; date?: string };
+  body?: string;
+}
+const { items = [] }: { items: Ann[] } = Astro.props;
+---
+<section class="mx-auto max-w-7xl px-4 py-8">
+  <h2 class="text-2xl font-semibold mb-4">Announcements</h2>
+  <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+    {items.map((a) => (
+      <a href={a.data.href ?? '#'} class="block border rounded-xl p-4 hover:shadow-md bg-white">
+        <h3 class="font-medium">{a.data.title}</h3>
+        {a.data.date && <p class="text-xs text-slate-500 mt-1">{a.data.date}</p>}
+        {a.body && <p class="text-sm text-slate-600 mt-2">{a.body}</p>}
+      </a>
+    ))}
+  </div>
+</section>

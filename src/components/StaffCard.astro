@@ -1,0 +1,13 @@
+interface StaffEntry {
+  data: { name: string; title?: string; email?: string; photo?: string };
+}
+const { entry }: { entry: StaffEntry } = Astro.props;
+---
+<article class="border rounded-xl p-4 bg-white shadow-sm">
+  {entry.data.photo && (
+    <img src={entry.data.photo} alt={entry.data.name} class="w-full h-40 object-cover rounded-lg mb-3" />
+  )}
+  <h3 class="font-semibold">{entry.data.name}</h3>
+  {entry.data.title && <p class="text-sm text-slate-600">{entry.data.title}</p>}
+  {entry.data.email && <p class="mt-2 text-sm"><a href={`mailto:${entry.data.email}`}>{entry.data.email}</a></p>}
+</article>
