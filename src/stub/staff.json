@@ -1,4 +1,12 @@
 [
   { "name": "Wendy Black", "title": "Principal", "email": "wendy.black@mmhsbulldogs.org", "photo": "/assets/staff/wendy-black.jpg" },
-  { "name": "Jean Palmeter", "title": "Secretary", "email": "jean.palmeter@mmhsbulldogs.org", "photo": "/assets/staff/jean-palmeter.jpg" }
+  { "name": "Jean Palmeter", "title": "Secretary", "email": "jean.palmeter@mmhsbulldogs.org", "photo": "/assets/staff/jean-palmeter.jpg" },
+  { "name": "Alaina Albee", "title": "Guidance Secretary / English Teacher", "email": "aalbee@mmhsbulldogs.org", "photo": "/assets/staff/alaina-albee.jpg" },
+  { "name": "Cara Cirillo", "title": "Guidance Director", "email": "ccirillo@mmhsbulldogs.org", "photo": "/assets/staff/cara-cirillo.jpg" },
+  { "name": "Chris Sprague", "title": "Building Trades / Industrial Arts", "email": "chris.sprague@mmhsbulldogs.org", "photo": "/assets/staff/chris-sprague.jpg" },
+  { "name": "Heidi Chutter", "title": "Math", "email": "hchutter@mmhsbulldogs.org", "photo": "/assets/staff/heidi-chutter.jpg" },
+  { "name": "James Black", "title": "Social Studies", "email": "jblack@mmhsbulldogs.org", "photo": "/assets/staff/james-black.jpg" },
+  { "name": "Jim Lenke", "title": "Science", "email": "jlenke@mmhsbulldogs.org", "photo": "/assets/staff/jim-lenke.jpg" }
+  
+
 ]
