@@ -14,6 +14,6 @@ export const site = {
     { label: 'Activities', href: '/activities' },
     { label: 'Covid-19', href: '/covid' },
     { label: 'Bulldog Gear', href: '/gear' },
-    { label: 'Technolog, href', '/tech'}
+    { label: 'Technology', href, '/tech'}
   ]
 };
