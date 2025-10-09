@@ -13,6 +13,7 @@ export const site = {
     { label: 'Meals', href: '/meals' },
     { label: 'Activities', href: '/activities' },
     { label: 'Covid-19', href: '/covid' },
-    { label: 'Bulldog Gear', href: '/gear' }
+    { label: 'Bulldog Gear', href: '/gear' },
+    { label: 'Technolog, href', '/tech'}
   ]
 };
