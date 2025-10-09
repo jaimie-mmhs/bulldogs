@@ -1,0 +1,2 @@
+# legacy WordPress slug redirects → new routes (Cloudflare Pages/Netlify)
+# /old-slug  /new-path  301
