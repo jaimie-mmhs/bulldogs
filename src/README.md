@@ -24,7 +24,17 @@ Open http://localhost:4321
 Add Decap CMS (Git-based) for announcements or staff updates without touching code.
 
 ## Theming
-Tailwind color tokens are set for Bulldog blue/gold (see `tailwind.config.js`).
+Tailwind color tokens are set for Bulldog orange/black (see `tailwind.config.js`).
+
+## Logo
+Place your logo at `public/assets/logo.svg` (preferred) or `public/assets/logo.png` and update `src/site.config.ts`:
+```ts
+export const site = {
+  // ...
+  logo: '/assets/logo.svg', // or '/assets/logo.png'
+};
+```
+Recommended sizes: SVG, or 512×512 PNG with transparent background.
 
 ## Redirects
 Add legacy WordPress slugs to `_redirects` so old URLs keep working.

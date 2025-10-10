@@ -4,6 +4,7 @@ export const site = {
   addressLines: ['1 Bulldog Lane', 'Machias, ME 04654'],
   phone: '207-255-3812',
   email: 'info@mmhsbulldogs.org',
+  logo: '/assets/BulldogFull.png',
   nav: [
     { label: 'Home', href: '/' },
     { label: 'Academics', href: '/academics', children: [

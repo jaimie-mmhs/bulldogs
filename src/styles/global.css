@@ -5,3 +5,11 @@
 :root { color-scheme: light; }
 
 .prose a { @apply text-bulldog-orange underline; }
+
+/* style links that open in new tab with arrow */
+a[target="_blank"]::after {
+  content: "↗";
+  margin-left: 0.25rem;
+  font-size: 0.85em;
+  opacity: 0.7;
+}
