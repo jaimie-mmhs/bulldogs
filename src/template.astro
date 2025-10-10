@@ -15,10 +15,21 @@ const breadcrumb = [
 ];
 ---
 
-<Base title={`${title} | ${site.name}`} description={description} breadcrumb={breadcrumb}>
-  <Fragment slot="hero">
-    <PageHero title={title} subtitle={subtitle} />
-  </Fragment>
+<Base title={`${title} | ${site.name}`} description={description} >
+    <PageHero title={title} subtitle={subtitle} breadcrumb={breadcrumb}/>
+
+  
+  <!-- Long-form content gets Typography styles -->
+  <article
+    class="prose prose-slate md:prose-lg mx-auto max-w-3xl px-4 py-10
+           prose-a:text-bulldog-orange prose-a:no-underline hover:prose-a:underline
+           prose-img:rounded-xl prose-headings:font-semibold"
+  >
+    <h2>About .....</h2>
+    <p>
+      short description
+    </p>
+  </article>
 
   <section class="mx-auto max-w-7xl px-4 py-10">
     <!-- Page content -->
@@ -26,5 +37,16 @@ const breadcrumb = [
     <p class="text-slate-700">
       Your content goes here.
     </p>
+
+    <!--GRID TEMPLATE -->
+  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+    <h3 class="text-lg font-semibold">TITLE</h3>
+    <p class="mt-2 text-sm text-slate-600">
+      DESCRIPTION
+    </p>
+    </article>
+
+
   </section>
 </Base>

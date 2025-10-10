@@ -1,0 +1,87 @@
+---
+import Base from '~/layouts/BaseLayout.astro';
+import PageHero from '~/components/PageHero.astro';
+import { site } from '~/site.config';
+
+const title = 'Guidance Office';
+const subtitle = '';
+const description = '';
+
+// Breadcrumbs: last item is current page (no href)
+const breadcrumb = [
+  { label: 'Home', href: '/' },
+  { label: title }
+];
+---
+
+<Base title={`${title} | ${site.name}`} description={description}>
+  <PageHero title={title} subtitle={subtitle} breadcrumb={breadcrumb} />
+
+  <!-- Intro (uses prose) -->
+  <article
+    class="prose prose-slate md:prose-lg mx-auto max-w-3xl px-4 py-8
+           prose-a:text-bulldog-orange prose-a:no-underline hover:prose-a:underline">
+    <h2>Guidance Office</h2>
+    <p>You can reach Ms. Cirillo in the guidance office at 207-255-3812 x 1010</p>
+  </article>
+
+  <!-- Section: For Graduates (no extra top padding from a separate article) -->
+  <section class="not-prose mx-auto max-w-7xl px-4 pt-2 pb-10">
+    <h2 class="text-2xl font-semibold mb-4">For Graduates</h2>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+        <h3 class="text-lg font-semibold">For Graduates</h3>
+        <ul class="mt-2 space-y-1 text-sm text-slate-600">
+          <li><a class="link" href="https://forms.gle/i16pGtjnTtj8TYgS9">Scholarship Redemption Form</a></li>
+          <li><a class="link" href="https://forms.gle/5hTddfqMcwZ4TK1t9">Transcript Request Form</a></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- Section: For Current Students -->
+  <section class="not-prose mx-auto max-w-7xl px-4 pt-2 pb-10">
+    <h2 class="text-2xl font-semibold mb-4">For Current Students</h2>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+        <h3 class="text-lg font-semibold">
+            <a class="link" href="https://forms.gle/DttSs3cXXvytjUNi9">Change of Address</a>
+        </h3>
+        <p class="mt-2 text-sm text-slate-600">Please inform the Guidance Office of changes is enrollment.  If your student moves towns, please fill out the Change of Address Form</p>
+      </article>
+      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+        <h3 class="text-lg font-semibold">
+            <a class="link" href="https://forms.gle/ws3bMPCUqmBwjekTA">Student Emergency Form</a>
+        </h3>
+        <p class="mt-2 text-sm text-slate-600">Update contact numbers, addresses, or medical information on the Student Emergency Form.</p>
+      </article>
+      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+        <h3 class="text-lg font-semibold">Standardized Testing</h3>
+        <p class="mt-2 text-sm text-slate-600">For SAT Saturday Testing, register on 
+            <a class="link" href="https://www.collegeboard.org/">College Board</a>.
+            For SAT School Day, PSAT, and ASVAB dates, check with the Guidance Office and sign up for the test.
+Link to the <a class="link" href="https://www.collegeboard.org/">College Board</a> and <a href="https://www.act.org/">ACT websites.</a></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Section: For Seniors -->
+  <section class="not-prose mx-auto max-w-7xl px-4 pt-2 pb-14">
+    <h2 class="text-2xl font-semibold mb-4">For Seniors</h2>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+        <h3 class="text-lg font-semibold">Change of Address</h3>
+        <p class="mt-2 text-sm text-slate-600">DESCRIPTION</p>
+      </article>
+      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+        <h3 class="text-lg font-semibold">Student Emergency Form</h3>
+        <p class="mt-2 text-sm text-slate-600">DESCRIPTION</p>
+      </article>
+      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+        <h3 class="text-lg font-semibold">Standardized Testing</h3>
+        <p class="mt-2 text-sm text-slate-600">DESCRIPTION</p>
+      </article>
+    </div>
+  </section>
+</Base>
+

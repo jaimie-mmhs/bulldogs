@@ -1,4 +1,9 @@
 ---
+interface Crumb {
+  label: string;
+  href?: string;
+}
+
 interface Props {
   title: string;
   subtitle?: string;
@@ -8,22 +13,50 @@ interface Props {
   center?: boolean;
   /** extra classes to merge onto the <section> */
   class?: string;
+  /** optional breadcrumb shown under the subtitle */
+  breadcrumb?: Crumb[];
 }
+
 const {
   title,
   subtitle,
   bgClass = 'bg-bulldog-orange',
   center = false,
   class: extra = '',
+  breadcrumb = [],
 } = Astro.props as Props;
 ---
 <section class={`text-white border-b ${bgClass} ${extra}`}>
   <div class="mx-auto max-w-7xl px-4 py-10">
     <div class={center ? 'text-center' : ''}>
       <h1 class="text-3xl font-semibold tracking-tight">{title}</h1>
+
       {subtitle && (
-        // Use white/90 on colored bg for contrast; was slate-600 before
         <p class="mt-2 text-white/90">{subtitle}</p>
+      )}
+
+      {breadcrumb.length > 0 && (
+        <nav aria-label="Breadcrumb" class="mt-3">
+          <ol class={`flex flex-wrap items-center gap-1 text-sm ${center ? 'justify-center' : ''} text-orange-50/90`}>
+            {breadcrumb.map((c, i) => {
+              const last = i === breadcrumb.length - 1;
+              return (
+                <>
+                  <li class="flex items-center gap-1">
+                    {last || !c.href ? (
+                      <span class="font-medium text-white/95">{c.label}</span>
+                    ) : (
+                      <a href={c.href} class="hover:underline underline-offset-2">
+                        {c.label}
+                      </a>
+                    )}
+                  </li>
+                  {!last && <li aria-hidden="true" class="px-1 opacity-70">/</li>}
+                </>
+              );
+            })}
+          </ol>
+        </nav>
       )}
 
       <!-- Optional actions / meta (buttons, tags, etc.) -->

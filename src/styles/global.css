@@ -4,12 +4,40 @@
 
 :root { color-scheme: light; }
 
+/* Prose defaults */
 .prose a { @apply text-bulldog-orange underline; }
+.prose ul ul, .prose ol ol { @apply text-sm leading-6; }
+.prose ul ul ul, .prose ol ol ol { @apply text-xs leading-5; }
+.prose ul ul { list-style-type: circle; }
+.prose ul ul ul { list-style-type: square; }
 
-/* style links that open in new tab with arrow */
-a[target="_blank"]::after {
+/* External-link arrow – works everywhere */
+a[data-external]:not([data-no-icon]):not(.no-external-icon):not(:has(img, svg))::after,
+a[target="_blank"]:not([data-no-icon]):not(.no-external-icon):not(:has(img, svg))::after {
   content: "↗";
-  margin-left: 0.25rem;
+  margin-inline-start: 0.25rem;
   font-size: 0.85em;
   opacity: 0.7;
+}
+
+/* Hide arrow on image links (for browsers that support :has) */
+a[data-external]:has(img, svg)::after,
+a[target="_blank"]:has(img, svg)::after {
+  content: none;
+}
+
+/* Slightly dimmer arrow inside prose blocks */
+.prose a[data-external]:not([data-no-icon]):not(.no-external-icon):not(:has(img, svg))::after,
+.prose a[target="_blank"]:not([data-no-icon]):not(.no-external-icon):not(:has(img, svg))::after {
+  opacity: 0.6;
+}
+
+/* Reusable link style for non-prose areas (cards, lists, headers) */
+@layer components {
+  .link {
+    @apply text-bulldog-orange font-medium underline underline-offset-4 decoration-2
+           hover:decoration-4 hover:text-bulldog-orange/90
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bulldog-orange/40
+           rounded-sm;
+  }
 }

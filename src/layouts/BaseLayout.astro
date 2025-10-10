@@ -3,6 +3,9 @@
 import { site } from '~/site.config';
 import Header from '~/components/Header.astro';
 import Footer from '~/components/Footer.astro';
+import '~/styles/global.css';
+
+
 
 export interface Crumb {
   label: string;
@@ -42,6 +45,8 @@ const showHeader = !noHeader && (breadcrumb.length > 0 || headerTitle || headerS
     {description && <meta name="description" content={description} />}
     <slot name="head" />
   </head>
+ 
+
   <body class="min-h-screen flex flex-col">
     <Header />
 
@@ -92,5 +97,27 @@ const showHeader = !noHeader && (breadcrumb.length > 0 || headerTitle || headerS
 
     <Footer />
     <slot name="scripts" />
+
+     <script is:inline>
+(() => {
+  const anchors = document.querySelectorAll('a[href]:not([data-no-newtab])');
+  anchors.forEach(a => {
+    const href = a.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+
+    // Resolve relative URLs; compare origin
+    let u;
+    try { u = new URL(href, window.location.href); } catch { return; }
+    if (u.origin === window.location.origin) return; // internal link
+
+    a.setAttribute('target', '_blank');
+    // keep any existing rel values
+    const rel = new Set((a.getAttribute('rel') || '').split(/\s+/).filter(Boolean));
+    rel.add('noopener'); rel.add('noreferrer');
+    a.setAttribute('rel', Array.from(rel).join(' '));
+    a.setAttribute('data-external', 'true');
+  });
+})();
+</script>
   </body>
 </html>
