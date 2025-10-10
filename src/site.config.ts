@@ -10,7 +10,7 @@ export const site = {
     { label: 'Academics', href: '/academics', children: [
       { label: 'Library', href: '/academics/library' },
       { label: 'CTE', href: '/academics/cte' },
-      { label: 'Special Education', href: '/about/special-education,' },
+      { label: 'Special Education', href: 'https://www.aos96.org/special-education-services' },
       { label: 'JMG', href: '/academics/jmg' },
       { label: 'Guidance', href: '/academics/guidance' }
     ] },

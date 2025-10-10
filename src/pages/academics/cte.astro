@@ -1,0 +1,84 @@
+---
+/**
+ * CTE page formatted like the Library page
+ * - Reuses your site header/footer via the Base layout
+ * - Library-style title bar + breadcrumb
+ * - Narrow prose column for content
+ */
+import Base from '~/layouts/Base.astro'; // whichever layout your Library page uses
+import { site } from '~/site.config';
+
+const title = 'CTE';
+const description = 'Career & Technical Education ';
+const url = `${site.url}/cte`;
+const ogImage = `${site.url}/og/cte.jpg`;
+---
+
+<Base title={`${title} | ${site.name}`} description={description} url={url} ogImage={ogImage}>
+  <!-- Library-style page header -->
+  <section class="border-b bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-6">
+      <!-- Breadcrumb (match Library page style) -->
+      <nav aria-label="Breadcrumb" class="mb-2 text-sm text-slate-600">
+        <ol class="flex flex-wrap items-center gap-1">
+          <li><a class="hover:text-bulldog-orange" href="/">Home</a></li>
+          <li aria-hidden="true" class="px-1">/</li>
+          <li class="text-slate-700 font-medium">CTE</li>
+        </ol>
+      </nav>
+
+      <h1 class="text-3xl font-semibold tracking-tight text-slate-900">
+        Career &amp; Technical Education
+      </h1>
+      <!-- Optional subheading line like Library page -->
+      <p class="mt-2 max-w-3xl text-slate-600">
+        Programs, pathways, and opportunities for hands-on learning at MMHS.
+      </p>
+    </div>
+  </section>
+
+  <!-- Library-style content container (prose, narrow column) -->
+  <main class="mx-auto max-w-3xl px-4 py-10">
+    <article class="prose prose-slate prose-headings:scroll-mt-24">
+      <!-- Replace below with your actual CTE content (converted from WP) -->
+      <h2>About CTE</h2>
+      <p>
+        Our CTE programs provide students with real-world skills, industry exposure,
+        and pathways to high-demand careers and further education.
+      </p>
+
+      <h2>Programs</h2>
+      <ul>
+        <li>Building Trades</li>
+        <li>Health Occupations</li>
+        <li>Information Technology</li>
+        <li>Automotive Technology</li>
+        <li>Culinary Arts</li>
+      </ul>
+
+      <h2>How to Enroll</h2>
+      <p>
+        Talk with your school counselor or contact the CTE coordinator to discuss program
+        requirements, schedules, and transportation.
+      </p>
+
+      <h3>CTE Coordinator</h3>
+      <p>
+        Email: <a href="mailto:cte@mmhsbulldogs.org">cte@mmhsbulldogs.org</a><br />
+        Phone: <a href="tel:+1-207-000-0000">(207) 000-0000</a>
+      </p>
+
+      <!-- If the Library page uses callouts/cards, match the style here -->
+      <div class="not-prose mt-8 grid gap-4 sm:grid-cols-2">
+        <a href="/cte/handbook" class="block rounded-xl border p-4 hover:border-bulldog-orange hover:bg-slate-50">
+          <h4 class="font-semibold">CTE Handbook</h4>
+          <p class="mt-1 text-sm text-slate-600">Policies, expectations, and resources.</p>
+        </a>
+        <a href="/cte/partners" class="block rounded-xl border p-4 hover:border-bulldog-orange hover:bg-slate-50">
+          <h4 class="font-semibold">Industry Partners</h4>
+          <p class="mt-1 text-sm text-slate-600">Local employers and work-based learning.</p>
+        </a>
+      </div>
+    </article>
+  </main>
+</Base>
