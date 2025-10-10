@@ -3,7 +3,7 @@
   { "name": "Amanda Anderson", "title": "Foreign Languages Teacher", "email": "aanderson@mmhsbulldogs.org", "photo": "/assets/staff/amanda-anderson.jpg" },
   { "name": "James Black", "title": "Social Studies Teacher", "email": "jblack@mmhsbulldogs.org", "photo": "/assets/staff/james-black.jpg" },
   { "name": "Wendy Black", "title": "Principal", "email": "wendy.black@mmhsbulldogs.org", "photo": "/assets/staff/wendy-black.jpg" },
-  { "name": "Lyra Carlow", "title": "Special Education", "email": "lyra.carlow@mmhsbulldogs.org", "photo": "/assets/staff/lyra-carlow.jpg" }.
+  { "name": "Lyra Carlow", "title": "Special Education", "email": "lyra.carlow@mmhsbulldogs.org", "photo": "/assets/staff/lyra-carlow.jpg" },
   { "name": "Heidi Chutter", "title": "Math Teacher", "email": "hchutter@mmhsbulldogs.org", "photo": "/assets/staff/heidi-chutter.jpg" },
   { "name": "Cara Cirillo", "title": "Guidance Director", "email": "ccirillo@mmhsbulldogs.org", "photo": "/assets/staff/cara-cirillo.jpg" },
   { "name": "Tyler Cobb", "title": "Computer Science Teacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
@@ -14,7 +14,7 @@
   { "name": "Michael Henry", "title": "Math Teacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
   { "name": "Erika Isnor", "title": "English Teacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
   { "name": "Celia Jellison", "title": "Alternative Ed Teacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
-  { "name": "Rebecca Lee", "title": "Art TEacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" }
+  { "name": "Rebecca Lee", "title": "Art TEacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
   { "name": "Jim Lenke", "title": "Science Teacher", "email": "jlenke@mmhsbulldogs.org", "photo": "/assets/staff/jim-lenke.jpg" },
   { "name": "Caitlin Maker", "title": "", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
   { "name": "Emily Mawhinney", "title": "Culinary Arts Teacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
@@ -32,7 +32,5 @@
   { "name": "Kris Smith", "title": "Maintenance Director", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
   { "name": "Chris Sprague", "title": "Building Trades / Industrial Arts Teacher", "email": "chris.sprague@mmhsbulldogs.org", "photo": "/assets/staff/chris-sprague.jpg" },
   { "name": "Wayne Stoddard", "title": "Maintenance / Bus Driver", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" }
-  
-// { "name": "", "title": "", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" }
 
 ]
