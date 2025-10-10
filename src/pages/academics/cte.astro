@@ -6,6 +6,7 @@
  * - Narrow prose column for content
  */
 import Base from '~/layouts/BaseLayout.astro'; // whichever layout your Library page uses
+import { site } from '~/site.config';
 
 const title = 'CTE';
 const description = 'Career & Technical Education ';
@@ -13,7 +14,7 @@ const url = `${site.url}/cte`;
 const ogImage = `${site.url}/og/cte.jpg`;
 ---
 
-<Base title={`${title} | ${site.name}`} description={description} url={url} ogImage={ogImage}>
+<Base title={`${title} | ${site.name}`} description={description}>
   <!-- Library-style page header -->
   <section class="border-b bg-slate-50">
     <div class="mx-auto max-w-7xl px-4 py-6">
