@@ -1,12 +1,38 @@
 [
-  { "name": "Wendy Black", "title": "Principal", "email": "wendy.black@mmhsbulldogs.org", "photo": "/assets/staff/wendy-black.jpg" },
-  { "name": "Jean Palmeter", "title": "Secretary", "email": "jean.palmeter@mmhsbulldogs.org", "photo": "/assets/staff/jean-palmeter.jpg" },
   { "name": "Alaina Albee", "title": "Guidance Secretary / English Teacher", "email": "aalbee@mmhsbulldogs.org", "photo": "/assets/staff/alaina-albee.jpg" },
+  { "name": "Amanda Anderson", "title": "Foreign Languages Teacher", "email": "aanderson@mmhsbulldogs.org", "photo": "/assets/staff/amanda-anderson.jpg" },
+  { "name": "James Black", "title": "Social Studies Teacher", "email": "jblack@mmhsbulldogs.org", "photo": "/assets/staff/james-black.jpg" },
+  { "name": "Wendy Black", "title": "Principal", "email": "wendy.black@mmhsbulldogs.org", "photo": "/assets/staff/wendy-black.jpg" },
+  { "name": "Lyra Carlow", "title": "Special Education", "email": "lyra.carlow@mmhsbulldogs.org", "photo": "/assets/staff/lyra-carlow.jpg" }.
+  { "name": "Heidi Chutter", "title": "Math Teacher", "email": "hchutter@mmhsbulldogs.org", "photo": "/assets/staff/heidi-chutter.jpg" },
   { "name": "Cara Cirillo", "title": "Guidance Director", "email": "ccirillo@mmhsbulldogs.org", "photo": "/assets/staff/cara-cirillo.jpg" },
-  { "name": "Chris Sprague", "title": "Building Trades / Industrial Arts", "email": "chris.sprague@mmhsbulldogs.org", "photo": "/assets/staff/chris-sprague.jpg" },
-  { "name": "Heidi Chutter", "title": "Math", "email": "hchutter@mmhsbulldogs.org", "photo": "/assets/staff/heidi-chutter.jpg" },
-  { "name": "James Black", "title": "Social Studies", "email": "jblack@mmhsbulldogs.org", "photo": "/assets/staff/james-black.jpg" },
-  { "name": "Jim Lenke", "title": "Science", "email": "jlenke@mmhsbulldogs.org", "photo": "/assets/staff/jim-lenke.jpg" }
+  { "name": "Tyler Cobb", "title": "Computer Science Teacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Sandy Copel-Parsons", "title": "JMG Teacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Kelly Dowling", "title": "Special Education Teacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Amy Getchell", "title": "Math Teacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Judy Hayward", "title": "Ed Tech", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Michael Henry", "title": "Math Teacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Erika Isnor", "title": "English Teacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Celia Jellison", "title": "Alternative Ed Teacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Rebecca Lee", "title": "Art TEacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" }
+  { "name": "Jim Lenke", "title": "Science Teacher", "email": "jlenke@mmhsbulldogs.org", "photo": "/assets/staff/jim-lenke.jpg" },
+  { "name": "Caitlin Maker", "title": "", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Emily Mawhinney", "title": "Culinary Arts Teacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Jaimie Moores", "title": "Technology Coordinator", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Gene Nichols", "title": "Music Teacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Jean Palmeter", "title": "Office Secretary", "email": "jean.palmeter@mmhsbulldogs.org", "photo": "/assets/staff/jean-palmeter.jpg" },
+  { "name": "Allison Paprocki", "title": "English Teacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Nadine Preston", "title": "Ed Tech", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Michelle Reynolds", "title": "Science Teacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Ty Richards", "title": "Social Studies Teacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Norma Rolfe", "title": "Ed Tech", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Tony Roy", "title": "Assistant Principal / Special Education Teacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Wendy Schoppee", "title": "Librarian", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Robert Sinford", "title": "Athletic Director / PE & Health Teacher", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Kris Smith", "title": "Maintenance Director", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" },
+  { "name": "Chris Sprague", "title": "Building Trades / Industrial Arts Teacher", "email": "chris.sprague@mmhsbulldogs.org", "photo": "/assets/staff/chris-sprague.jpg" },
+  { "name": "Wayne Stoddard", "title": "Maintenance / Bus Driver", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" }
   
+// { "name": "", "title": "", "email": "@mmhsbulldogs.org", "photo": "/assets/staff/.jpg" }
 
 ]
