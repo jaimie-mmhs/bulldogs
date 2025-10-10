@@ -38,6 +38,15 @@ export const site = {
       { label: 'SAT Saturday Registration', href: 'https://www.collegeboard.org/' },
       { label: 'Student Emergency Form', href: 'https://forms.gle/ws3bMPCUqmBwjekTA' }
     ] },
+    { label: 'Seniors', children: [
+      {label: 'College Release', href: 'https://forms.gle/j55rYXPWnPUq5GEd6'},
+      {label: 'FAFSA', href: 'https://studentaid.gov/h/apply-for-aid/fafsa'},
+      {label: 'FSAID', href: 'https://www.famemaine.com/affording-education/pay-for-school/get-financial-aid/fafsa/'}
+    ]},
+      { label: 'Graduates', children: [
+      {label: 'Scholarship Redemption', href: 'https://forms.gle/i16pGtjnTtj8TYgS9'},
+      {label: 'Transcript Request', href: 'https://forms.gle/5hTddfqMcwZ4TK1t9'}
+    ]},
     { label: 'Technology', href: '/tech'}
   ]
 };
