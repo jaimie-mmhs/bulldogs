@@ -1,23 +1,96 @@
 ---
-import '~/styles/global.css';
+// src/layouts/Base.astro
 import { site } from '~/site.config';
 import Header from '~/components/Header.astro';
 import Footer from '~/components/Footer.astro';
-const { title = site.name, description = site.name } = Astro.props;
+
+export interface Crumb {
+  label: string;
+  href?: string; // omit on the current page
+}
+
+export interface Props {
+  title?: string;
+  description?: string;
+
+  // NEW: optional library-style page header
+  breadcrumb?: Crumb[];
+  headerTitle?: string;
+  headerSubtitle?: string;
+  headerBg?: string;   // tailwind classes for the header background
+  noHeader?: boolean;  // force-disable header
+}
+
+const {
+  title = site.name,
+  description = site.description ?? '',
+  breadcrumb = [],
+  headerTitle,
+  headerSubtitle,
+  headerBg = 'bg-slate-50',
+  noHeader = false
+} = Astro.props as Props;
+
+const showHeader = !noHeader && (breadcrumb.length > 0 || headerTitle || headerSubtitle);
 ---
-<html lang="en" class="min-h-full">
+
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} · {site.name}</title>
-    <meta name="description" content={description} />
-    <link rel="icon" href="/favicon.ico" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <slot name="head" />
   </head>
-  <body class="min-h-screen flex flex-col bg-white text-slate-900">
+  <body class="min-h-screen flex flex-col">
     <Header />
-    <main id="main" class="flex-1">
+
+    {showHeader && (
+      <section class={`border-b ${headerBg}`}>
+        <div class="mx-auto max-w-7xl px-4 py-6">
+          {breadcrumb.length > 0 && (
+            <nav aria-label="Breadcrumb" class="mb-2 text-sm text-slate-600">
+              <ol class="flex flex-wrap items-center gap-1">
+                {breadcrumb.map((c, i) => {
+                  const isLast = i === breadcrumb.length - 1;
+                  return (
+                    <>
+                      <li>
+                        {isLast || !c.href ? (
+                          <span class="text-slate-700 font-medium">{c.label}</span>
+                        ) : (
+                          <a class="hover:text-bulldog-orange" href={c.href}>{c.label}</a>
+                        )}
+                      </li>
+                      {!isLast && <li aria-hidden="true" class="px-1">/</li>}
+                    </>
+                  );
+                })}
+              </ol>
+            </nav>
+          )}
+
+          {(headerTitle || headerSubtitle) && (
+            <>
+              {headerTitle && (
+                <h1 class="text-3xl font-semibold tracking-tight text-slate-900">
+                  {headerTitle}
+                </h1>
+              )}
+              {headerSubtitle && (
+                <p class="mt-2 max-w-3xl text-slate-600">{headerSubtitle}</p>
+              )}
+            </>
+          )}
+        </div>
+      </section>
+    )}
+
+    <main class="flex-1">
       <slot />
     </main>
+
     <Footer />
+    <slot name="scripts" />
   </body>
 </html>
