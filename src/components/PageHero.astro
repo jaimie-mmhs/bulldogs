@@ -1,10 +1,35 @@
-
 ---
-const { title, subtitle } = Astro.props;
+interface Props {
+  title: string;
+  subtitle?: string;
+  /** background utility (keeps your orange by default) */
+  bgClass?: string;
+  /** center text on small landing pages, etc. */
+  center?: boolean;
+  /** extra classes to merge onto the <section> */
+  class?: string;
+}
+const {
+  title,
+  subtitle,
+  bgClass = 'bg-bulldog-orange',
+  center = false,
+  class: extra = '',
+} = Astro.props as Props;
 ---
-<section class="bg-bulldog-orange text-white border-b">
+<section class={`text-white border-b ${bgClass} ${extra}`}>
   <div class="mx-auto max-w-7xl px-4 py-10">
-    <h1 class="text-3xl font-semibold">{title}</h1>
-    {subtitle && <p class="mt-2 text-slate-600">{subtitle}</p>}
+    <div class={center ? 'text-center' : ''}>
+      <h1 class="text-3xl font-semibold tracking-tight">{title}</h1>
+      {subtitle && (
+        // Use white/90 on colored bg for contrast; was slate-600 before
+        <p class="mt-2 text-white/90">{subtitle}</p>
+      )}
+
+      <!-- Optional actions / meta (buttons, tags, etc.) -->
+      <div class={`mt-4 ${center ? 'justify-center' : ''} flex gap-3`}>
+        <slot name="actions" />
+      </div>
+    </div>
   </div>
 </section>
