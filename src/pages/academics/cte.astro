@@ -5,7 +5,7 @@
  * - Library-style title bar + breadcrumb
  * - Narrow prose column for content
  */
-import Base from '~/layouts/BaseLayout.astro'; // whichever layout your Library page uses
+import Base from '~/layouts/BaseLayout.astro'; 
 import PageHero from '~/components/PageHero.astro';
 import { site } from '~/site.config';
 
@@ -13,26 +13,22 @@ const title = 'CTE';
 const subtitle = 'Career & Technical Education ';
 const description = 'High school students choose to enroll in CTE program because of the incredible opportunities they provide. Students learn about and use cutting edge equipment and technologies with professional mentors who are deeply connected in their industry. CTE programs prepare students for college and a wide range of high-wage and high demand careers.';
 
-const crumbs = [
+// breadcrumbs
+const breadcrumb = [
   { label: 'Home', href: '/' },
-  { label: 'CTE' } // current page: no href
+  { label: title } // current page
 ];
 ---
 
-<Base
-  title={`${title} | ${site.name}`}
-  description={description}
-  breadcrumb={crumbs}
-  headerTitle="Career & Technical Education"
-  headerSubtitle={subtitle}
->
-  <main class="mx-auto max-w-3xl px-4 py-10">
-    <article class="prose prose-slate prose-headings:scroll-mt-24">
-      <!-- Replace below with your actual CTE content (converted from WP) -->
-      <h2>About CTE</h2>
-      <p>
+<Base title={`${title} | ${site.name}`} description={description} breadcrumb={breadcrumb}>
+    <Fragment slot="hero">
+        <PageHero title={title} subtitle={subtitle} />
+    </Fragment>
+  <section class="mx-auto max-w-7xl px-4 py-10">
+      <h2 class="text-2xl font-semibold mb-4">About CTE</h2>
+      <p class="text-slate-700">
         Our CTE programs provide students with real-world skills, industry exposure,
-        and pathways to high-demand careers and further education.
+        and pathways to high-demand careers and further education. dooood
       </p>
 
       <h2>Programs</h2>
@@ -67,6 +63,8 @@ const crumbs = [
           <p class="mt-1 text-sm text-slate-600">Local employers and work-based learning.</p>
         </a>
       </div>
-    </article>
-  </main>
+  </section>
 </Base>
+
+
+
