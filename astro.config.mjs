@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
+import rehypeExternalLinks from 'rehype-external-links';
 
 export default defineConfig({
   site: 'https://mmhsbulldogs.org',
