@@ -3,6 +3,8 @@ export const site = {
   domain: 'mmhsbulldogs.org',
   addressLines: ['1 Bulldog Lane', 'Machias, ME 04654'],
   phone: '207-255-3812',
+  fax: '207-255-3093',
+  facebook: 'https://www.facebook.com/The-Official-Machias-Memorial-High-School-201739319918290',
   email: 'info@mmhsbulldogs.org',
   logo: '/assets/BulldogFull.png',
   url: 'https://test.mmhsbulldogs.org', //<--comment out when site goes live
