@@ -2,34 +2,36 @@
 import { site } from '~/site.config';
 ---
 <footer class="bg-bulldog-black text-white border-t">
-  <div class="mx-auto max-w-7xl px-4 py-8 grid md:grid-cols-2 gap-4">
-    <div>
-      <div class="font-semibold">{site.name}</div>
-      <div class="text-sm text-slate-600">{site.addressLines.join(', ')}</div>
-      <div class="text-sm text-slate-600">P: {site.phone}</div>
-      <div class="text-sm text-slate-600">F: {site.fax}</div>
+  <div class="mx-auto max-w-7xl px-4 py-8">
+
+    <!-- Row 1: contact (left) + socials (right) -->
+    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+      <div>
+        <div class="font-semibold">{site.name}</div>
+        <div class="text-sm text-slate-400">{site.addressLines.join(', ')}</div>
+        <div class="text-sm text-slate-400">P: {site.phone}</div>
+        <div class="text-sm text-slate-400">F: {site.fax}</div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a
+          href={site.facebook}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="MMHS on Facebook"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-bulldog-orange
+                 hover:bg-bulldog-orange hover:text-white transition"
+        >
+          <!-- use your asset; this is the same PNG you mentioned -->
+          <img src="/assets/facebook-orange.png" alt="" class="h-5 w-5" />
+        </a>
+      </div>
     </div>
-     {/* Socials */}
-    <div class="flex md:justify-center gap-4">
-      <a
-        href="https://www.facebook.com/The-Official-Machias-Memorial-High-School-201739319918290"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="MMHS on Facebook"
-        class="inline-flex items-center rounded-md p-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/30"
-        data-no-icon
-      >
-        <img
-          src="/assets/facebook-orange.png"
-          alt="Facebook"
-          class="h-6 w-6"
-          loading="lazy"
-        />
-        <span class="sr-only">Facebook</span>
-      </a>
-    </div>
-    <div class="md:text-right text-sm text-white/80">
+
+    <!-- Row 2: copyright -->
+    <div class="mt-6 border-t border-white/10 pt-4 text-sm text-white/80 md:text-right">
       © {new Date().getFullYear()} {site.name}
     </div>
+
   </div>
 </footer>
