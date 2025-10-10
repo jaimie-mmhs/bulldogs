@@ -10,6 +10,8 @@ const nav = site.nav;
       )}
       <span class="font-semibold text-lg tracking-wide text-bulldog-orange group-hover:opacity-90">{site.name}</span>
     </a>
+
+    <!-- Desktop Nav -->
     <nav class="hidden md:flex gap-6" id="main-nav">
       {nav.map((item, i) => (
         <div class="relative" data-menu>
@@ -48,79 +50,97 @@ const nav = site.nav;
       ))}
     </nav>
 
-    <script is:inline>
-      // Hover-intent with delay so menus don't snap shut immediately
-      (function(){
-        const OPEN_DELAY = 80;   // ms before opening on hover
-        const CLOSE_DELAY = 250; // ms before closing after mouse leaves
-
-        const nav = document.getElementById('main-nav');
-        if(!nav) return;
-
-        function setupMenu(root){
-          const trigger = root.querySelector('[data-trigger]');
-          const panel = root.querySelector('[data-panel]');
-          if(!trigger || !panel) return;
-
-          let openTimer, closeTimer;
-          const open = () => {
-            clearTimeout(closeTimer);
-            openTimer = setTimeout(()=>{
-              panel.classList.remove('invisible','opacity-0');
-              panel.classList.add('visible','opacity-100');
-            }, OPEN_DELAY);
-          };
-          const close = () => {
-            clearTimeout(openTimer);
-            closeTimer = setTimeout(()=>{
-              panel.classList.add('invisible','opacity-0');
-              panel.classList.remove('visible','opacity-100');
-            }, CLOSE_DELAY);
-          };
-
-          // Top-level hover handling
-          trigger.addEventListener('mouseenter', open);
-          root.addEventListener('mouseenter', open);
-          root.addEventListener('mouseleave', close);
-          panel.addEventListener('mouseenter', () => { clearTimeout(closeTimer); });
-          panel.addEventListener('mouseleave', close);
-
-          // Keyboard accessibility
-          trigger.addEventListener('focus', open);
-          panel.addEventListener('focusin', () => { clearTimeout(closeTimer); });
-          panel.addEventListener('focusout', close);
-
-          // Second level inside this panel
-          panel.querySelectorAll('[data-submenu]').forEach((subRoot)=>{
-            const subTrig = subRoot.querySelector('[data-subtrigger]');
-            const subPanel = subRoot.querySelector('[data-subpanel]');
-            if(!subTrig || !subPanel) return;
-            let sOpenTimer, sCloseTimer;
-            const sOpen = () => {
-              clearTimeout(sCloseTimer);
-              sOpenTimer = setTimeout(()=>{
-                subPanel.classList.remove('invisible','opacity-0');
-                subPanel.classList.add('visible','opacity-100');
-              }, OPEN_DELAY);
-            };
-            const sClose = () => {
-              clearTimeout(sOpenTimer);
-              sCloseTimer = setTimeout(()=>{
-                subPanel.classList.add('invisible','opacity-0');
-                subPanel.classList.remove('visible','opacity-100');
-              }, CLOSE_DELAY);
-            };
-            subTrig.addEventListener('mouseenter', sOpen);
-            subRoot.addEventListener('mouseenter', sOpen);
-            subRoot.addEventListener('mouseleave', sClose);
-            subPanel.addEventListener('mouseenter', ()=>clearTimeout(sCloseTimer));
-            subPanel.addEventListener('mouseleave', sClose);
-            subTrig.addEventListener('focus', sOpen);
-          });
-        }
-
-        nav.querySelectorAll('[data-menu]').forEach(setupMenu);
-      })();
-    </script>
+    <!-- Mobile hamburger -->
+    <button id="menuToggle" class="md:hidden inline-flex items-center justify-center p-2 rounded-xl border hover:bg-slate-50" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
   </div>
+
+  <!-- Mobile panel -->
+  <div id="mobileMenu" class="md:hidden hidden border-t bg-white" data-open="false">
+    <ul class="px-4 py-3 space-y-1">
+      {nav.map((item) => (
+        <li>
+          {!item.children ? (
+            <a href={item.href ?? '#'} class="block px-2 py-2 rounded-lg hover:bg-slate-50">{item.label}</a>
+          ) : (
+            <div>
+              <button class="w-full flex items-center justify-between px-2 py-2 rounded-lg hover:bg-slate-50" data-acc>
+                <span>{item.label}</span>
+                <span class="ml-2 text-slate-500">▾</span>
+              </button>
+              <ul class="max-h-0 overflow-hidden transition-[max-height] duration-300 pl-3" data-acc-panel>
+                {item.children.map((child) => (
+                  <li class="py-1">
+                    {!child.children ? (
+                      <a href={child.href ?? '#'} class="block px-2 py-2 rounded-lg hover:bg-slate-50">{child.label}</a>
+                    ) : (
+                      <div>
+                        <button class="w-full flex items-center justify-between px-2 py-2 rounded-lg hover:bg-slate-50" data-acc>
+                          <span>{child.label}</span>
+                          <span class="ml-2 text-slate-500">▸</span>
+                        </button>
+                        <ul class="max-h-0 overflow-hidden transition-[max-height] duration-300 pl-3" data-acc-panel>
+                          {child.children.map((gchild) => (
+                            <li class="py-1">
+                              <a href={gchild.href} class="block px-2 py-2 rounded-lg hover:bg-slate-50">{gchild.label}</a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <script is:inline>
+    // Desktop hover-intent (already present) + Mobile toggles
+    (function(){
+      // existing desktop hover code remains; we only add mobile JS here
+      const btn = document.getElementById('menuToggle');
+      const panel = document.getElementById('mobileMenu');
+      if(btn && panel){
+        btn.addEventListener('click', () => {
+          const open = panel.dataset.open === 'true';
+          panel.dataset.open = String(!open);
+          btn.setAttribute('aria-expanded', String(!open));
+          panel.classList.toggle('hidden', open);
+        });
+        // Close on Escape
+        document.addEventListener('keydown', (e)=>{
+          if(e.key === 'Escape' && panel.dataset.open === 'true'){
+            panel.dataset.open = 'false';
+            btn.setAttribute('aria-expanded','false');
+            panel.classList.add('hidden');
+          }
+        });
+        // Accordion behavior
+        panel.querySelectorAll('[data-acc]').forEach((accBtn)=>{
+          const next = accBtn.nextElementSibling;
+          accBtn.addEventListener('click', ()=>{
+            const expanded = accBtn.getAttribute('aria-expanded') === 'true';
+            accBtn.setAttribute('aria-expanded', String(!expanded));
+            if(next){
+              if(expanded){ next.style.maxHeight = '0px'; }
+              else { next.style.maxHeight = next.scrollHeight + 'px'; }
+            }
+          });
+        });
+        // Close menu when clicking a link
+        panel.querySelectorAll('a[href]').forEach((a)=>{
+          a.addEventListener('click', ()=>{
+            panel.dataset.open = 'false';
+            btn.setAttribute('aria-expanded','false');
+            panel.classList.add('hidden');
+          });
+        });
+      }
+    })();
+  </script>
 </header>
