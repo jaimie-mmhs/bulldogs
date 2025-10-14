@@ -43,7 +43,7 @@ export const site = {
       href: '/activities',
       children: [
         { label: 'Clubs', href: '/activities/clubs' },
-        { label: 'Athletics', href: 'https://www.bulldogathletics1.com/' }
+        { label: 'Athletics', href: '/activities/athletics' }
       ]
     },
 
