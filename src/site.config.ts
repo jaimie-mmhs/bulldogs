@@ -14,7 +14,7 @@ export const site = {
 
     {
       label: 'Academics',
-      href: '/academics',
+      //href: '/academics',
       children: [
         { label: 'Library', href: '/academics/library' },
         { label: 'CTE', href: '/academics/cte' },
@@ -26,7 +26,7 @@ export const site = {
 
     {
       label: 'About',
-      href: '/about',
+      //href: '/about',
       children: [
         { label: 'Mission', href: '/about/mission' },
         { label: 'History', href: '/about/history' },
@@ -40,7 +40,7 @@ export const site = {
 
     {
       label: 'Activities',
-      href: '/activities',
+      //href: '/activities',
       children: [
         { label: 'Clubs', href: '/activities/clubs' },
         { label: 'Athletics', href: '/activities/athletics' }
@@ -49,7 +49,7 @@ export const site = {
 
     {
       label: 'Forms',
-      href: '/forms',
+      //href: '/forms',
       children: [
         { label: 'Change of Address', href: 'https://forms.gle/DttSs3cXXvytjUNi9' },
         { label: 'SAT Saturday Registration', href: 'https://www.collegeboard.org/' },
