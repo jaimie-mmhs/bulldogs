@@ -7,8 +7,8 @@ export const site = {
   facebook: 'https://www.facebook.com/The-Official-Machias-Memorial-High-School-201739319918290',
   email: 'info@mmhsbulldogs.org',
   logo: '/assets/BulldogFull.png',
-  url: 'https://test.mmhsbulldogs.org', //<--comment out when site goes live
-  //url: 'https://www.mmhsbulldogs.org',  //<-- uncomment when site goes live
+  //url: 'https://test.mmhsbulldogs.org', //<--comment out when site goes live
+  url: 'https://www.mmhsbulldogs.org',  //<-- uncomment when site goes live
   nav: [
     { label: 'Home', href: '/' },
 
