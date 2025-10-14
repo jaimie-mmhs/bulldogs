@@ -1,31 +1,33 @@
 ---
-import Base from '@/layouts/BaseLayout.astro';
-import PageHero from '~/components/PageHero.astro';
-import { site } from '~/site.config';
+import Base from "@/layouts/BaseLayout.astro";
+import PageHero from "~/components/PageHero.astro";
+import { site } from "~/site.config";
 
-const title = 'MMHS Library';
-const subtitle = '';
-const description = 'Welcome to the Machias Memorial High School Library'
+const title = "MMHS Library";
+const subtitle = "";
+const description = "Welcome to the Machias Memorial High School Library";
 const breadcrumb = [
-  { label: 'Home', href: '/' },
-  { label: title } // current page
+  { label: "Home", href: "/" },
+  { label: title }, // current page
 ];
 ---
 
-<Base
-  title={`${title} | ${site.name}`}
-  description={description}
->
-  <PageHero title={title} subtitle={subtitle} breadcrumb={breadcrumb}/>
+<Base title={`${title} | ${site.name}`} description={description}>
+  <PageHero title={title} subtitle={subtitle} breadcrumb={breadcrumb} />
 
   <!-- Quick links row (cards) -->
   <section class="mx-auto max-w-5xl px-4 py-8">
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
       <!-- Replace hrefs with real links -->
-      <a href="https://mmhsbulldogs.follettdestiny.com/" class="group block rounded-2xl border p-5 hover:shadow-md focus:outline-none focus:ring">
+      <a
+        href="https://mmhsbulldogs.follettdestiny.com/portal/portal?app=Destiny%20Discover&appId=destiny-7PZP-LBPC&siteGuid=D4612BFA-CD91-48A8-83E6-F465EDD3AC93&nav=https:%2F%2Fmmhsbulldogs.follettdestiny.com%2Fmetasearch%2Fui%2F13470"
+        class="group block rounded-2xl border p-5 hover:shadow-md focus:outline-none focus:ring"
+      >
         <h2 class="text-lg font-semibold flex items-center justify-between">
           MMHS Library Catalog
-          <span class="text-sm font-medium opacity-60 group-hover:opacity-100">↗</span>
+          <span class="text-sm font-medium opacity-60 group-hover:opacity-100"
+            >↗</span
+          >
         </h2>
         <p class="mt-1 text-sm opacity-80">Search books and media</p>
       </a>
@@ -40,7 +42,7 @@ const breadcrumb = [
         <!-- Replace everything below with your actual content (copy from old WP editor content, NOT the Divi chrome) -->
 
         <h2>About the Library</h2>
-        <p>Welcome to the Machias Memorial High School Library. </p>
+        <p>Welcome to the Machias Memorial High School Library.</p>
 
         <h3>Hours</h3>
         <ul>
@@ -49,7 +51,10 @@ const breadcrumb = [
         </ul>
 
         <h3>Borrowing & Returns</h3>
-        <p>Students may check out materials for two weeks and renew as needed unless another patron has placed a hold.</p>
+        <p>
+          Students may check out materials for two weeks and renew as needed
+          unless another patron has placed a hold.
+        </p>
 
         <h3>Policies</h3>
         <ul>
@@ -59,14 +64,23 @@ const breadcrumb = [
 
         <h3>Helpful Links</h3>
         <ul>
-          <li><a href="https://library.digitalmaine.org">Digital Maine Library</a></li>
+          <li>
+            <a href="https://library.digitalmaine.org">Digital Maine Library</a>
+          </li>
           <li><a href="https://www.easybib.com">Easy Bib</a></li>
           <li><a href="https://www.grammarly.com">Grammarly</a></li>
-          <li><a href="http://www.porter.lib.me.us">Porter Memorial Library</a></li>
+          <li>
+            <a href="http://www.porter.lib.me.us">Porter Memorial Library</a>
+          </li>
           <li><a href="https://scholar.google.com">Google Scholar</a></li>
           <li><a href="https://owl.purdue.edu">Purdue Writing Lab</a></li>
-          <li><a href="https://www.bangordailynews.com">Bangor Daily News</a></li>
-          <li><a href="https://www.machiasnews.com">Machias Valley News Observer</a></li>
+          <li>
+            <a href="https://www.bangordailynews.com">Bangor Daily News</a>
+          </li>
+          <li>
+            <a href="https://www.machiasnews.com"
+              >Machias Valley News Observer</a>
+          </li>
         </ul>
 
         <!-- End replace -->
@@ -77,8 +91,10 @@ const breadcrumb = [
         <div class="rounded-2xl border p-5">
           <h2 class="text-xl font-semibold">Contact</h2>
           <p class="mt-2 text-sm opacity-90">
-            <strong>Librarian:</strong> Wendy Schoppee<br/>
-            <a href="mailto:wschoppee@mmhsbulldogs.org">wschoppee@mmhsbulldogs.org</a><br/>
+            <strong>Librarian:</strong> Wendy Schoppee<br />
+            <a href="mailto:wschoppee@mmhsbulldogs.org"
+              >wschoppee@mmhsbulldogs.org</a
+            ><br />
             (207) 255-3812
           </p>
         </div>
@@ -86,7 +102,8 @@ const breadcrumb = [
         <!-- Optional callout -->
         <div class="mt-4 rounded-2xl bg-black text-white p-5">
           <p class="text-sm">
-            Tip: Need citation help? Try our MLA/APA quick guides or ask the librarian.
+            Tip: Need citation help? Try our MLA/APA quick guides or ask the
+            librarian.
           </p>
         </div>
       </aside>
