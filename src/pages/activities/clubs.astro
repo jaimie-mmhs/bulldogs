@@ -1,0 +1,71 @@
+---
+import Base from "~/layouts/BaseLayout.astro";
+import PageHero from "~/components/PageHero.astro";
+import { site } from "~/site.config";
+
+const title = "Page Title";
+const subtitle = "Optional subtitle";
+const description = "Short page description for SEO.";
+
+// Breadcrumbs: last item is current page (no href)
+const breadcrumb = [
+  { label: "Home", href: "/" },
+  { label: "Section", href: "/section" },
+  { label: title },
+];
+---
+
+<Base title={`${title} | ${site.name}`} description={description}>
+  <PageHero title={title} subtitle={subtitle} breadcrumb={breadcrumb} />
+
+  <!-- Long-form content gets Typography styles -->
+  <article
+    class="prose prose-slate md:prose-lg mx-auto max-w-3xl px-4 py-10
+           prose-a:text-bulldog-orange prose-a:no-underline hover:prose-a:underline
+           prose-img:rounded-xl prose-headings:font-semibold"
+  >
+    <h2>About .....</h2>
+    <p>short description</p>
+  </article>
+
+  <section class="mx-auto max-w-7xl px-4 py-10">
+    <!-- Page content -->
+    <h2 class="text-2xl font-semibold mb-4">Section heading</h2>
+    <p class="text-slate-700">Your content goes here.</p>
+
+    <!--GRID TEMPLATE -->
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mx-auto max-w-4xl">
+      <article
+        class="rounded-2xl bg-white p-5 shadow-sm hover:shadow-md transition"
+      >
+        <h3 class="text-lg font-semibold">Video Club</h3>
+        <p class="mt-2 text-sm text-slate-600">
+          MMHS sports has a YouTube page for live streaming home games, usually
+          from the gymnasium. This is an excellent path to explore sports
+          broadcast journalism and general video camera operation/ switching/and
+          technology. If you like sports or if you like taking videos this is a
+          great club to gain experience. Always better to do with a friend for
+          support and to enjoy our home sports games. This club meets depending
+          on the home game schedule is generally in the late afternoon/early
+          evening.
+        </p>
+        <p>Contact Mr. Lenke, or Ms. Albee to Join!</p>
+      </article>
+      <article
+        class="rounded-2xl bg-white p-5 shadow-sm hover:shadow-md transition"
+      >
+        <h3 class="text-lg font-semibold">Program</h3>
+        <p class="mt-2 text-sm text-slate-600"></p>
+      </article>
+
+      <article
+        class="rounded-2xl bg-white p-5 shadow-sm hover:shadow-md transition"
+      >
+        <h3 class="text-lg font-semibold">Program</h3>
+        <p class="mt-2 text-sm text-slate-600"></p>
+      </article>
+
+      <!-- duplicate more <article> blocks as needed -->
+    </div>
+  </section>
+</Base>

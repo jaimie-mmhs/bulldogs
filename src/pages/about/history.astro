@@ -1,52 +1,100 @@
 ---
-import Base from '~/layouts/BaseLayout.astro';
-import PageHero from '~/components/PageHero.astro';
-import { site } from '~/site.config';
+import Base from "~/layouts/BaseLayout.astro";
+import PageHero from "~/components/PageHero.astro";
+import { site } from "~/site.config";
 
-const title = 'Page Title';
-const subtitle = 'Optional subtitle';
-const description = 'Short page description for SEO.';
+const title = "History";
+const subtitle = "";
+const description = "";
 
 // Breadcrumbs: last item is current page (no href)
-const breadcrumb = [
-  { label: 'Home', href: '/' },
-  { label: 'Section', href: '/section' },
-  { label: title }
-];
+const breadcrumb = [{ label: "Home", href: "/" }, { label: title }];
 ---
 
-<Base title={`${title} | ${site.name}`} description={description} >
-    <PageHero title={title} subtitle={subtitle} breadcrumb={breadcrumb}/>
+<Base title={`${title} | ${site.name}`} description={description}>
+  <PageHero title={title} subtitle={subtitle} breadcrumb={breadcrumb} />
 
-  
   <!-- Long-form content gets Typography styles -->
   <article
     class="prose prose-slate md:prose-lg mx-auto max-w-3xl px-4 py-10
            prose-a:text-bulldog-orange prose-a:no-underline hover:prose-a:underline
            prose-img:rounded-xl prose-headings:font-semibold"
   >
-    <h2>About .....</h2>
+    <h2>History of Machias Memorial High School</h2>
     <p>
-      short description
+      In 1850 the residents of Machias established the first public high school
+      in the town. It was located in Libby Hall atop Steele’s Hill. For those
+      unfamiliar with the area, the hill is located on Lower Court Street. The
+      hill was also the site of the famous Liberty Pole erected during the
+      Revolutionary War Era by Machias rebels to caution the Crown of the
+      anti-British sentiment in the town. The building can be seen in an
+      original painting by former MMHS art instructor, Ed Foster. The building
+      served the town until 1954 when the current Machias Memorial High School
+      was opened.
+    </p>
+    <p>
+      Libby Hall was a two-story structure which housed a full academic program.
+      There was a large assembly room along with various classrooms. Drama
+      productions and musical presentations were generally held within the
+      building itself. The athletic teams became known as the Bulldogs, and the
+      school colors became black and orange. Eventually, the school song,
+      modeled after the World War I song There’s a Long Long Trail A-Winding,
+      added a great deal of pride to the students and alumni of Machias High
+      School and Machias Memorial High School. Although the traditional school
+      song has never officially been replaced, a new school fight song, modeled
+      after On Wisconsin, was adopted in the mid to late 1960’s and is now more
+      commonly played at school events, much to the chagrin of older alumni.
+    </p>
+    <img src="/assets/old.jpeg" />
+    <img src="/assets/chimney.jpeg" />
+    <p>
+      The original building began showing its age, and by the 1950’s residents
+      of the town started planning for a new high school. The citizens wanted to
+      honor the area veterans from World War I, Korea, and previous conflicts so
+      the town named the new school Machias Memorial High School. The main
+      building was constructed just up the road at what was then 109 Court
+      Street. The new address is 1 Bulldog Lane. The school was built on the
+      site of a large, open field with a new baseball field on campus. The
+      building was very modern for its time and was a one-story structure with a
+      very tall chimney. Rumor had it at the time that the chimney was so tall
+      so that they could add a second story if need be.
+    </p>
+    <p>
+      The building did not contain a gym, and basketball and plays were held at
+      Powers Hall on the Washington State Teachers College campus. This fact
+      made it difficult for our students to compete athletically and in fine
+      arts competitions. The town fathers began to get input from the citizens
+      of Machias that they wanted a new gym built which could house not only
+      sporting events but also physical education/health classes, and dramatic
+      presentations. Citizens of Machias came together and privately raised a
+      large sum of money for the project. The gym was built on campus and was
+      dedicated in 1961.
+    </p>
+    <p>
+      In the early 1960’s the Navy and Air Force facilities were constructed and
+      the early Baby Boomers began to hit secondary schools which increased
+      enrollment dramatically. In the spring of 1965 a language lab, science
+      room and a large study hall room were added to the West Wing: The school
+      soon added Special Services programs as well as Industrial Arts programs
+      including construction and automotive. A building was built beside the gym
+      to house the Industrial Arts program. The school population reached its
+      peak in the late 1960’s and early 1970’s.
+    </p>
+    <p>
+      In the early 21st Century the facility was updated further. Another small
+      building was built which now houses the MMHS Alternative Education Program
+      as well as the Jobs for Maine’s Graduates Program. Science labs were
+      modernized, new ceilings and lighting were installed, and a new slanted
+      roof was added to the main building. Under the leadership of our previous
+      principal, Nicole Case, a new open air pavilion and outside exercise
+      equipment which is open all community members were added. This year a new
+      road and parking area were constructed behind the gym, and plans are in
+      the works for a new gym floor.
+    </p>
+    <p>
+      Although we experienced an era of no to slow growth, MMHS is now
+      experiencing a big growth in student population. It looks as though the
+      future is so bright, we gotta’ wear shades!
     </p>
   </article>
-
-  <section class="mx-auto max-w-7xl px-4 py-10">
-    <!-- Page content -->
-    <h2 class="text-2xl font-semibold mb-4">Section heading</h2>
-    <p class="text-slate-700">
-      Your content goes here.
-    </p>
-
-    <!--GRID TEMPLATE -->
-  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-    <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
-    <h3 class="text-lg font-semibold">TITLE</h3>
-    <p class="mt-2 text-sm text-slate-600">
-      DESCRIPTION
-    </p>
-    </article>
-
-
-  </section>
 </Base>

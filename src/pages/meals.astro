@@ -1,10 +1,37 @@
 ---
-import Base from '~/layouts/BaseLayout.astro';
-import PageHero from '~/components/PageHero.astro';
+import Base from "~/layouts/BaseLayout.astro";
+import PageHero from "~/components/PageHero.astro";
+import { site } from "~/site.config";
+
+const title = "Meals";
+const subtitle = "";
+const description = "";
+
+// Breadcrumbs: last item is current page (no href)
+const breadcrumb = [{ label: "Home", href: "/" }, { label: title }];
 ---
-<Base title="Meals">
-  <PageHero title="Cafeteria & Menus" />
-  <section class="mx-auto max-w-4xl px-4 py-8 prose">
-    <p>Link to monthly menu PDFs, Free/Reduced Lunch application, and policies. Drop PDFs in <code>/public/assets/menus</code>.</p>
-  </section>
+
+<Base title={`${title} | ${site.name}`} description={description}>
+  <PageHero title={title} subtitle={subtitle} breadcrumb={breadcrumb} />
+
+  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mx-auto max-w-4xl">
+    <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+      <h3 class="text-lg font-semibold">Application</h3>
+      <p class="mt-2 text-sm text-slate-600">
+        <a
+          class="link"
+          href="https://www.nlappscloud.com/Welcome.aspx?cf=District&apply=1&api=2bd043fa3cfff8cfe8d4ae5a74646d06"
+        >
+          Free & Reduced Lunch Application</a
+        >
+      </p>
+    </article>
+  </div>
+
+  <article
+    class="prose prose-slate md:prose-lg mx-auto max-w-3xl px-4 py-8
+           prose-a:text-bulldog-orange prose-a:no-underline hover:prose-a:underline"
+  >
+    <p>Breakfast and lunch are free to all students.</p>
+  </article>
 </Base>
