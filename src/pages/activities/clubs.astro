@@ -3,16 +3,12 @@ import Base from "~/layouts/BaseLayout.astro";
 import PageHero from "~/components/PageHero.astro";
 import { site } from "~/site.config";
 
-const title = "Page Title";
-const subtitle = "Optional subtitle";
-const description = "Short page description for SEO.";
+const title = "Clubs & Activities";
+const subtitle = "";
+const description = "";
 
 // Breadcrumbs: last item is current page (no href)
-const breadcrumb = [
-  { label: "Home", href: "/" },
-  { label: "Section", href: "/section" },
-  { label: title },
-];
+const breadcrumb = [{ label: "Home", href: "/" }, { label: title }];
 ---
 
 <Base title={`${title} | ${site.name}`} description={description}>
@@ -24,19 +20,14 @@ const breadcrumb = [
            prose-a:text-bulldog-orange prose-a:no-underline hover:prose-a:underline
            prose-img:rounded-xl prose-headings:font-semibold"
   >
-    <h2>About .....</h2>
-    <p>short description</p>
+    <h2>Clubs & Activities</h2>
   </article>
 
   <section class="mx-auto max-w-7xl px-4 py-10">
-    <!-- Page content -->
-    <h2 class="text-2xl font-semibold mb-4">Section heading</h2>
-    <p class="text-slate-700">Your content goes here.</p>
-
     <!--GRID TEMPLATE -->
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mx-auto max-w-4xl">
       <article
-        class="rounded-2xl bg-white p-5 shadow-sm hover:shadow-md transition"
+        class="rounded-2xl bg-white p-5 shadow-sm hover:ring-1 hover:ring-slate-200/60 transition"
       >
         <h3 class="text-lg font-semibold">Video Club</h3>
         <p class="mt-2 text-sm text-slate-600">
@@ -52,19 +43,147 @@ const breadcrumb = [
         <p>Contact Mr. Lenke, or Ms. Albee to Join!</p>
       </article>
       <article
-        class="rounded-2xl bg-white p-5 shadow-sm hover:shadow-md transition"
+        class="rounded-2xl bg-white p-5 shadow-sm hover:ring-1 hover:ring-slate-200/60 transition"
       >
-        <h3 class="text-lg font-semibold">Program</h3>
-        <p class="mt-2 text-sm text-slate-600"></p>
+        <h3 class="text-lg font-semibold">Chess & Gaming Club</h3>
+        <p class="mt-2 text-sm text-slate-600">
+          Chess & Gaming meets once a week after school to promote gaming and
+          chess competitions. MMHS does have a chess team and will travel away
+          to participate in chess tournaments and the state scholastic chess
+          tournament. All fees are covered. Even if you don’t know anything
+          about chess this is a chance to try it out, meet other students and
+          participate in an afterschool club. Even if you don’t like chess, the
+          club still has many games available for all to participate in after
+          school. For both sides, water and snacks are provided.
+        </p>
+        <p>Contact Mr. Lenke to join!</p>
       </article>
 
       <article
-        class="rounded-2xl bg-white p-5 shadow-sm hover:shadow-md transition"
+        class="rounded-2xl bg-white p-5 shadow-sm hover:ring-1 hover:ring-slate-200/60 transition"
       >
-        <h3 class="text-lg font-semibold">Program</h3>
-        <p class="mt-2 text-sm text-slate-600"></p>
+        <h3 class="text-lg font-semibold">National Honor Society</h3>
+        <p class="mt-2 text-sm text-slate-600">
+          The National Honor Society promotes academic achievement, community
+          service, leadership, and good citizenship in our school. Members
+          choose group service projects such as writing cards to nursing home
+          residents or volunteering at an animal shelter. Students in 10th-12th
+          grade with an 88 or above grade average are eligible to apply, and
+          eligible students will receive more information later in the fall. You
+          must be nominated to join.
+        </p>
+        <p>Contact Mrs. Paprocki for more information!</p>
       </article>
-
+      <article
+        class="rounded-2xl bg-white p-5 shadow-sm hover:ring-1 hover:ring-slate-200/60 transition"
+      >
+        <h3 class="text-lg font-semibold">Student Council</h3>
+        <p class="mt-2 text-sm text-slate-600">
+          The Student Council is the voice of the student body at MMS. They work
+          together for the unity and well-being of our school and community. If
+          you’d like to be a voice, an advocate, an ambassador, and an activist,
+          please see Mrs. Schoppee.
+        </p>
+        <p>Contact Mrs. Schoppee to join!</p>
+      </article>
+      <article
+        class="rounded-2xl bg-white p-5 shadow-sm hover:ring-1 hover:ring-slate-200/60 transition"
+      >
+        <h3 class="text-lg font-semibold">Welcome Committee</h3>
+        <p class="mt-2 text-sm text-slate-600">
+          Members of the Welcome Committee help establish an environment of
+          comfort and support for all students at MMHS. They might be asked to
+          help orient new students who transfer into or want to shadow at MMHS
+          during the school year, host an activity, or invite peers into a
+          friendly and supportive group. The first meeting will be on the 16th
+          during lunch
+        </p>
+        <p>Contact Ms. Cirillo to join!</p>
+      </article>
+      <article
+        class="rounded-2xl bg-white p-5 shadow-sm hover:ring-1 hover:ring-slate-200/60 transition"
+      >
+        <h3 class="text-lg font-semibold">Prom Committee</h3>
+        <p class="mt-2 text-sm text-slate-600">
+          Prom is a fun, school-wide event that is a fundraiser for the Junior
+          class. Traditionally this is led primarily by Juniors and requires
+          fundraising, development of theme, event planning and a commitment to
+          setup and tear down. All students from all classes are welcome to
+          attend meetings and to participate in creative design, but the
+          majority of the decision making and budgeting is left to the Junior
+          class participants. In order to be successful this group needs to be
+          comprised of dedicated members that are committed to the success of
+          the event from fall through May.
+        </p>
+        <p>Contact Ms. Jean to Join!</p>
+      </article>
+      <article
+        class="rounded-2xl bg-white p-5 shadow-sm hover:ring-1 hover:ring-slate-200/60 transition"
+      >
+        <h3 class="text-lg font-semibold">Math Team</h3>
+        <p class="mt-2 text-sm text-slate-600">
+          The math team meets Thursdays after school to practice math and
+          critical thinking skills and apply them to challenge problems. We
+          compete with other teams in Washington and Hancock counties at math
+          meets about once a month on Wednesdays. All are welcome, regardless of
+          math level or classes taken.
+        </p>
+        <p>Contact Mrs. Chutter to join!</p>
+      </article>
+      <article
+        class="rounded-2xl bg-white p-5 shadow-sm hover:ring-1 hover:ring-slate-200/60 transition"
+      >
+        <h3 class="text-lg font-semibold">National Art Honor Society</h3>
+        <p class="mt-2 text-sm text-slate-600">
+          National Art Honor Society (NAHS) recognizes artistic talents and
+          provides opportunities for leadership roles for visual arts students.
+          We highlight excellence and dedication in art, we recognize art
+          excellence in our school, and we promote art within the community.
+        </p>
+        <p>Contact Mrs. Lee to join!</p>
+      </article>
+      <article
+        class="rounded-2xl bg-white p-5 shadow-sm hover:ring-1 hover:ring-slate-200/60 transition"
+      >
+        <h3 class="text-lg font-semibold">GSA (Gender & Sexuality Alliance)</h3>
+        <p class="mt-2 text-sm text-slate-600">
+          This is an informal group and all students are welcome. This is a time
+          to meet in a safe space and be yourself. Activities and meeting times
+          are determined by the group.
+        </p>
+      </article>
+      <article
+        class="rounded-2xl bg-white p-5 shadow-sm hover:ring-1 hover:ring-slate-200/60 transition"
+      >
+        <h3 class="text-lg font-semibold">Outing Club</h3>
+        <p class="mt-2 text-sm text-slate-600">
+          The MMHS Outing Club is open to ALL students in the school. We do not
+          hold regular meetings. Every outing will be announced and anyone who
+          would like to participate is welcome. In the past we have gone on many
+          hikes. We have canoed Simpsons pond, Hadley lake, and the East Machias
+          River. We have gone fishing, done outdoor photography contests,
+          mountain biked the Sunrise Trail. camped at Cobscook State Park, and
+          participated in many more events. One of the most popular events,
+          which we do every year, is the annual ice fishing trip on Indian lake.
+          This club can be whatever you want to make
+        </p>
+        <p>Contact Mr. Roy to join!</p>
+      </article>
+      <article
+        class="rounded-2xl bg-white p-5 shadow-sm hover:ring-1 hover:ring-slate-200/60 transition"
+      >
+        <h3 class="text-lg font-semibold">Close-Up Washington D.C.</h3>
+        <p class="mt-2 text-sm text-slate-600">
+          Close-Up Washington, D.C. is a self- fundraised trip to the Nation’s
+          Capital. Students participate in Workshops On Wheels where they tour
+          DC as well as learn about politics and history melded together. It’s
+          around a week long trip, during which students will tour the city of
+          DC and spend a full day on Capitol Hill to meet their Congressmen. **
+          Ms. Albee will be absent on 9/9. Please see her another time if you
+          are interested.
+        </p>
+        <p>Contact Ms. Albee to Join!</p>
+      </article>
       <!-- duplicate more <article> blocks as needed -->
     </div>
   </section>

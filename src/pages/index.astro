@@ -1,11 +1,15 @@
 ---
-import Base from '~/layouts/BaseLayout.astro';
-import PageHero from '~/components/PageHero.astro';
+import Base from "~/layouts/BaseLayout.astro";
+import PageHero from "~/components/PageHero.astro";
 ---
+
 <Base title="Home">
-  <PageHero title="Machias Memorial High School" subtitle="Home of the Bulldogs" />
-  
-    <article
+  <PageHero
+    title="Machias Memorial High School"
+    subtitle="Home of the Bulldogs"
+  />
+
+  <article
     class="prose prose-slate md:prose-lg mx-auto max-w-3xl px-4 py-10
            prose-a:text-bulldog-orange prose-a:no-underline hover:prose-a:underline
            prose-img:rounded-xl prose-headings:font-semibold"
@@ -15,35 +19,65 @@ import PageHero from '~/components/PageHero.astro';
     <p>MMHS Graduates are Ready, and Engaged to Advance in Life.</p>
   </article>
 
-<section class="not-prose mx-auto max-w-7xl px-4 py-8">
-<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
-    <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
-    <h3 class="text-lg font-semibold"><a class="link" href="/calendar">School Calendar</a></h3>
-    <p class="mt-2 text-sm text-slate-600">
-      View all of our school's upcoming events
+  <article>
+    <h2>Mission Statement</h2>
+    <p>
+      We respect our students as individuals, as members of our Downeast
+      community, and as citizens of the world. We ready students to engage in
+      all aspects of their education and to pursue individual pathways
+      customized with applicable knowledge and skills. In a safe and supportive
+      environment, enhanced by healthy relationships and communication, we
+      prepare students to advance in life.
     </p>
-    </article>
+  </article>
 
-    <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
-    <h3 class="text-lg font-semibold"><a class="link" href="https://aos96.powerschool.com">PowerSchool</a></h3>
-    <p class="mt-2 text-sm text-slate-600">
-      Login and track your student's grades and attendance
-    </p>
-    </article>
+  <section class="not-prose mx-auto max-w-7xl px-4 py-8">
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+      <article
+        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
+      >
+        <h3 class="text-lg font-semibold">
+          <a class="link" href="/calendar">School Calendar</a>
+        </h3>
+        <p class="mt-2 text-sm text-slate-600">
+          View all of our school's upcoming events
+        </p>
+      </article>
 
-    <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
-    <h3 class="text-lg font-semibold"><a class="link" href="https://bulldogathletics1.com">Athletics Calendar</a></h3>
-    <p class="mt-2 text-sm text-slate-600">
-      Check out our athletics calendar for up-to-date game schedules
-    </p>
-    </article>
+      <article
+        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
+      >
+        <h3 class="text-lg font-semibold">
+          <a class="link" href="https://aos96.powerschool.com">PowerSchool</a>
+        </h3>
+        <p class="mt-2 text-sm text-slate-600">
+          Login and track your student's grades and attendance
+        </p>
+      </article>
 
-    <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
-    <h3 class="text-lg font-semibold"><a class="link" href="https://docs.google.com/document/d/1SS0neju6cQq42slGNz3x3HSrtkfqMX4d7Q1a9dx7cqE/preview?tab=t.0">Student Handbook</a></h3>
-    <p class="mt-2 text-sm text-slate-600">
-      View our student handbook
-    </p>
-    </article>
-</div>
-</section>
+      <article
+        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
+      >
+        <h3 class="text-lg font-semibold">
+          <a class="link" href="https://bulldogathletics1.com"
+            >Athletics Calendar</a>
+        </h3>
+        <p class="mt-2 text-sm text-slate-600">
+          Check out our athletics calendar for up-to-date game schedules
+        </p>
+      </article>
+
+      <article
+        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
+      >
+        <h3 class="text-lg font-semibold">
+          <a
+            class="link"
+            href="https://docs.google.com/document/d/1SS0neju6cQq42slGNz3x3HSrtkfqMX4d7Q1a9dx7cqE/preview?tab=t.0"
+            >Student Handbook</a>
+        </h3>
+        <p class="mt-2 text-sm text-slate-600">View our student handbook</p>
+      </article>
+    </div>
+  </section>
 </Base>

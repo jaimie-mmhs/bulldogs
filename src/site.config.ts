@@ -43,11 +43,9 @@ export const site = {
       href: '/activities',
       children: [
         { label: 'Clubs', href: '/activities/clubs' },
-        { label: 'Athletics', href: '/activities/athletics' }
+        { label: 'Athletics', href: 'https://www.bulldogathletics1.com/' }
       ]
     },
-
-    { label: 'Covid-19', href: '/covid' },
 
     {
       label: 'Forms',
@@ -76,8 +74,8 @@ export const site = {
           ]
         }
       ]
-    },
+    }//,
 
-    { label: 'Technology', href: '/tech' }
+    // { label: 'Technology', href: '/tech' }
   ]
 };
