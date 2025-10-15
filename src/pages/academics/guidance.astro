@@ -1,16 +1,17 @@
 ---
-import Base from '~/layouts/BaseLayout.astro';
-import PageHero from '~/components/PageHero.astro';
-import { site } from '~/site.config';
+import Base from "~/layouts/BaseLayout.astro";
+import PageHero from "~/components/PageHero.astro";
+import { site } from "~/site.config";
 
-const title = 'Guidance Office';
-const subtitle = '';
-const description = '';
+const title = "Guidance Office";
+const subtitle = "";
+const description = "";
 
 // Breadcrumbs: last item is current page (no href)
 const breadcrumb = [
-  { label: 'Home', href: '/' },
-  { label: title }
+  { label: "Home", href: "/" },
+  { label: "Academics" },
+  { label: title },
 ];
 ---
 
@@ -20,20 +21,33 @@ const breadcrumb = [
   <!-- Intro (uses prose) -->
   <article
     class="prose prose-slate md:prose-lg mx-auto max-w-3xl px-4 py-8
-           prose-a:text-bulldog-orange prose-a:no-underline hover:prose-a:underline">
+           prose-a:text-bulldog-orange prose-a:no-underline hover:prose-a:underline"
+  >
     <h2>Guidance Office</h2>
-    <p>You can reach Ms. Cirillo in the guidance office at 207-255-3812 x 1010</p>
+    <p>
+      You can reach Ms. Cirillo in the guidance office at 207-255-3812 x 1010
+    </p>
   </article>
 
   <!-- Section: For Graduates (no extra top padding from a separate article) -->
   <section class="not-prose mx-auto max-w-7xl px-4 pt-2 pb-10">
     <h2 class="text-2xl font-semibold mb-4">For Graduates</h2>
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+      <article
+        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
+      >
         <h3 class="text-lg font-semibold">For Graduates</h3>
         <ul class="mt-2 space-y-1 text-sm text-slate-600">
-          <li><a class="link" href="https://forms.gle/i16pGtjnTtj8TYgS9">Scholarship Redemption Form</a></li>
-          <li><a class="link" href="https://forms.gle/5hTddfqMcwZ4TK1t9">Transcript Request Form</a></li>
+          <li>
+            <a class="link" href="https://forms.gle/i16pGtjnTtj8TYgS9"
+              >Scholarship Redemption Form</a
+            >
+          </li>
+          <li>
+            <a class="link" href="https://forms.gle/5hTddfqMcwZ4TK1t9"
+              >Transcript Request Form</a
+            >
+          </li>
         </ul>
       </article>
     </div>
@@ -43,25 +57,46 @@ const breadcrumb = [
   <section class="not-prose mx-auto max-w-7xl px-4 pt-2 pb-10">
     <h2 class="text-2xl font-semibold mb-4">For Current Students</h2>
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+      <article
+        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
+      >
         <h3 class="text-lg font-semibold">
-            <a class="link" href="https://forms.gle/DttSs3cXXvytjUNi9">Change of Address</a>
+          <a class="link" href="https://forms.gle/DttSs3cXXvytjUNi9"
+            >Change of Address</a
+          >
         </h3>
-        <p class="mt-2 text-sm text-slate-600">Please inform the Guidance Office of changes is enrollment.  If your student moves towns, please fill out the Change of Address Form</p>
+        <p class="mt-2 text-sm text-slate-600">
+          Please inform the Guidance Office of changes is enrollment. If your
+          student moves towns, please fill out the Change of Address Form
+        </p>
       </article>
-      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+      <article
+        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
+      >
         <h3 class="text-lg font-semibold">
-            <a class="link" href="https://forms.gle/ws3bMPCUqmBwjekTA">Student Emergency Form</a>
+          <a class="link" href="https://forms.gle/ws3bMPCUqmBwjekTA"
+            >Student Emergency Form</a
+          >
         </h3>
-        <p class="mt-2 text-sm text-slate-600">Update contact numbers, addresses, or medical information on the Student Emergency Form.</p>
+        <p class="mt-2 text-sm text-slate-600">
+          Update contact numbers, addresses, or medical information on the
+          Student Emergency Form.
+        </p>
       </article>
-      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+      <article
+        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
+      >
         <h3 class="text-lg font-semibold">Standardized Testing</h3>
-        <p class="mt-2 text-sm text-slate-600">For SAT Saturday Testing, register on 
-            <a class="link" href="https://www.collegeboard.org/">College Board</a>.
-            For SAT School Day, PSAT, and ASVAB dates, check with the Guidance Office and sign up for the test.
-            Link to the <a class="link" href="https://www.collegeboard.org/">College Board</a> 
-            and <a class="link" href="https://www.act.org/">ACT</a> websites.</p>
+        <p class="mt-2 text-sm text-slate-600">
+          For SAT Saturday Testing, register on
+          <a class="link" href="https://www.collegeboard.org/">College Board</a
+          >. For SAT School Day, PSAT, and ASVAB dates, check with the Guidance
+          Office and sign up for the test. Link to the <a
+            class="link"
+            href="https://www.collegeboard.org/">College Board</a
+          >
+          and <a class="link" href="https://www.act.org/">ACT</a> websites.
+        </p>
       </article>
     </div>
   </section>
@@ -70,55 +105,352 @@ const breadcrumb = [
   <section class="not-prose mx-auto max-w-7xl px-4 pt-2 pb-14">
     <h2 class="text-2xl font-semibold mb-4">For Seniors</h2>
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+      <article
+        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
+      >
         <h3 class="text-lg font-semibold">
-            <a class="link" href="https://studentaid.gov/h/apply-for-aid/fafsa">FAFSA</a></h3>
-        <p class="mt-2 text-sm text-slate-600">Free Application for Federal Student Aid.</p>
-      </article>
-      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
-        <h3 class="text-lg font-semibold">
-            <a class="link" href="https://www.famemaine.com/affording-education/pay-for-school/get-financial-aid/fafsa/">
-                FSAID
-            </a>
+          <a class="link" href="https://studentaid.gov/h/apply-for-aid/fafsa"
+            >FAFSA</a
+          >
         </h3>
         <p class="mt-2 text-sm text-slate-600">
-            
-            Federal Student Aid Identification Form.
-            </a>
+          Free Application for Federal Student Aid.
         </p>
       </article>
-      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+      <article
+        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
+      >
         <h3 class="text-lg font-semibold">
-            <a class="link" href="https://forms.gle/j55rYXPWnPUq5GEd6">
-            College Relase Form
-            </a>
+          <a
+            class="link"
+            href="https://www.famemaine.com/affording-education/pay-for-school/get-financial-aid/fafsa/"
+          >
+            FSAID
+          </a>
         </h3>
-        <p class="mt-2 text-sm text-slate-600">For MMHS transcripts, test scores and recommendation letters.
-            This form will not be sent to colleges.
+        <p class="mt-2 text-sm text-slate-600">
+          Federal Student Aid Identification Form.
         </p>
       </article>
-      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
-        <h3 class="text-lg font-semibold">Scholarship Information</h3>
-        <p class="mt-2 text-sm text-slate-600">Scholarship season begins for seniors near the end of October.  
-            Once students have submitted college applications, the next step is to find money for college.  
-            The Guidance Office compiles a list of scholarship deadlines each year in a pdf which is emailed to 
-            students and updated periodically.  Many scholarships are local or statewide.  Only scholarships sent 
-            directly to the Guidance Offices are listed on the pdf, and these are only a small collections of 
-            scholarships available each year.  Please used the directories listed below to help you find more 
-            scholarships or stop into the Guidance Office and ask about scholarships that you are eligible for.</p>
-      </article>
-      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
-        <h3 class="text-lg font-semibold">Scholarship Directories</h3>
-        <p class="mt-2 text-sm text-slate-600">
-            <ul>
-            <li><a class="link" href="https://www.unigo.com/scholarships/high-school-students/scholarships-for-high-school-seniors">Unigo</a></li>    
-            <li><a class="link" href="https://www.fastweb.com/ppc?utm_source=google&utm_medium=ppc&mkw=scholarships+for+high+school&gclid=EAIaIQobChMI8_mMrcCs3wIVBZyzCh3Csw0GEAEYAiAAEgIw0fD_BwE&pcrid=142825828738&mkwid=s5Yx0C5Sm&pmt=b">Fastweb</a></li> 
-            <li><a class="link" href="https://www.famemaine.com/education/topics/paying-for-college/maine-scholarship-search/">Fame Maine</a></li>    
-            <li><a class="link" href="http://www.mainecf.org/Scholarships/AvailableScholarships.aspx">Maine Community Foundation</a></li>    
-            <li><a class="link" href="https://www.scholarships.com/">Scholarships.com</a></li>   
-      </article>
-
     </div>
+    <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+      <h3 class="text-lg font-semibold">
+        <a class="link" href="https://forms.gle/j55rYXPWnPUq5GEd6">
+          College Release Form
+        </a>
+      </h3>
+      <p class="mt-2 text-sm text-slate-600">
+        For MMHS transcripts, test scores and recommendation letters. This form
+        will not be sent to colleges.
+      </p>
+    </article>
+  </section>
+  <section class="not-prose mx-auto max-w-7xl px-4 pt-2 pb-14">
+    <h2 class="text-2xl font-semibold mb-4">Scholarships</h2>
+    <p class="mt-2 text-sm text-slate-600">
+      Paying for college or post-secondary training can feel overwhelming, but
+      many opportunities exist to help cover costs. Scholarships are available
+      from local organizations, statewide programs, and national sources. The
+      Guidance Office compiles a list of scholarships each year, but students
+      are encouraged to explore all scholarships. Remember: never pay for
+      scholarships or financial aid - Legitimate programs are always free.
+    </p>
+  </section>
+
+  <!-- Scholarships (card-style, matches site look) -->
+  <section class="not-prose mx-auto max-w-7xl px-4 pt-2 pb-14">
+    <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+      <h3 class="text-lg font-semibold mb-3">Featured Scholarships</h3>
+
+      <div class="overflow-x-auto">
+        <table class="min-w-full table-auto text-sm">
+          <caption class="sr-only"
+            >Available scholarships with eligibility, award, and deadlines</caption
+          >
+          <thead class="bg-slate-50 text-slate-700">
+            <tr>
+              <th scope="col" class="px-3 py-2 text-left font-semibold"
+                >Scholarship</th
+              >
+              <th scope="col" class="px-3 py-2 text-left font-semibold"
+                >Who Can Apply</th
+              >
+              <th scope="col" class="px-3 py-2 text-left font-semibold"
+                >Award</th
+              >
+              <th scope="col" class="px-3 py-2 text-left font-semibold"
+                >Deadline</th
+              >
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr class="align-top">
+              <td class="px-3 py-3">
+                <strong
+                  ><a
+                    href="https://worthingtonscholars.org/scholarship-program/eligibility/"
+                    target="_blank"
+                    class="link">Worthington Scholarship</a
+                  ></strong
+                ><br />
+              </td>
+              <td class="px-3 py-3 text-slate-700">
+                Graduating seniors from participating Maine high schools,
+                including Washington County.<br />
+                Minimum GPA of B- (four-year) or C- (community college).<br />
+                Student Aid Index (SAI) of $30,000 or less.
+              </td>
+              <td class="px-3 py-3 text-slate-700"
+                >Up to $20,000 over four years</td
+              >
+              <td class="px-3 py-3 text-slate-700">January 1 – April 15</td>
+            </tr>
+
+            <tr class="align-top bg-slate-50/50">
+              <td class="px-3 py-3">
+                <strong
+                  ><a
+                    href="https://seacoastmission.org/2025-2026-scholarships/"
+                    target="_blank"
+                    class="link">Seacoast Mission Scholarships</a
+                  ></strong
+                ><br />
+              </td>
+              <td class="px-3 py-3 text-slate-700">
+                Graduating seniors entering trade, technical, two-year, or
+                four-year colleges in Washington County.
+              </td>
+              <td class="px-3 py-3 text-slate-700">Varies</td>
+              <td class="px-3 py-3 text-slate-700">Varies</td>
+            </tr>
+
+            <tr class="align-top">
+              <td class="px-3 py-3">
+                <strong
+                  ><a
+                    href="https://seacoastmission.org/downeast/scholarships/davis-maine-scholarship/"
+                    target="_blank"
+                    class="link">Davis Maine Scholarship</a
+                  ></strong
+                ><br />
+              </td>
+              <td class="px-3 py-3 text-slate-700">
+                First-generation students from Washington and eastern Hancock
+                counties.<br />
+                Apply during junior year; GPA 3.0+.
+              </td>
+              <td class="px-3 py-3 text-slate-700"
+                >Full four-year scholarship (renewable)</td
+              >
+              <td class="px-3 py-3 text-slate-700"
+                >Late March – mid-April (junior year)</td
+              >
+            </tr>
+            <tr class="align-top">
+              <td class="px-3 py-3">
+                <strong
+                  ><a
+                    href="https://www.famemaine.com/affording-education/pay-for-school/maine-scholarship-search/"
+                    target="_blank"
+                    class="link"
+                    >Maine 4-H Camp and Learning Center Scholarship</a
+                  ></strong
+                ><br />
+              </td>
+              <td class="px-3 py-3 text-slate-700"
+                >For Washington County 4-H members attending Maine 4-H Camp and
+                Learning Centers.</td
+              >
+              <td class="px-3 py-3 text-slate-700">Award: $300 (five awards)</td
+              >
+              <td class="px-3 py-3 text-slate-700">Varies</td>
+            </tr>
+            <tr class="align-top">
+              <td class="px-3 py-3">
+                <strong
+                  ><a
+                    href="https://www.famemaine.com/fame_scholarship/maine-legislative-memorial-scholarship-fund/"
+                    target="_blank"
+                    class="link">Maine Legislative Memorial Scholarship</a
+                  ></strong
+                ><br />
+              </td>
+              <td class="px-3 py-3 text-slate-700"
+                >One award per county, including Washington County, for students
+                pursuing post-secondary education.</td
+              >
+              <td class="px-3 py-3 text-slate-700">Varies</td>
+              <td class="px-3 py-3 text-slate-700">Varies</td>
+            </tr>
+            <tr class="align-top">
+              <td class="px-3 py-3">
+                <strong
+                  ><a
+                    href="https://www.mitchellinstitute.org/"
+                    target="_blank"
+                    class="link">Mitchell Scholarship</a
+                  ></strong
+                ><br />
+              </td>
+              <td class="px-3 py-3 text-slate-700"
+                >Awarded to graduating students from Maine’s public high schools
+                pursuing higher education.
+              </td>
+              <td class="px-3 py-3 text-slate-700">$10,000</td>
+              <td class="px-3 py-3 text-slate-700">Varies</td>
+            </tr>
+            <tr class="align-top">
+              <td class="px-3 py-3">
+                <strong
+                  ><a
+                    href="https://scholarships360.org/scholarships/search/clyde-russell-scholarship-fund/"
+                    target="_blank"
+                    class="link">Clyde Russell Scholarship Fund</a
+                  ></strong
+                ><br />
+              </td>
+              <td class="px-3 py-3 text-slate-700"
+                >For graduating seniors attending an in-state community college
+                or four-year university.</td
+              >
+              <td class="px-3 py-3 text-slate-700">$500-$10,000</td>
+              <td class="px-3 py-3 text-slate-700">Varies</td>
+            </tr>
+            <tr class="align-top">
+              <td class="px-3 py-3">
+                <strong
+                  ><a
+                    href="https://www.wtsinternational.org/chapters/maine/scholarships/"
+                    target="_blank"
+                    class="link">WTS Maine High School Scholarship</a
+                  ></strong
+                ><br />
+              </td>
+              <td class="px-3 py-3 text-slate-700"
+                >For high school seniors pursuing transportation-related fields.</td
+              >
+              <td class="px-3 py-3 text-slate-700">Varies</td>
+              <td class="px-3 py-3 text-slate-700">Early 2026</td>
+            </tr>
+            <tr class="align-top">
+              <td class="px-3 py-3">
+                <strong>MMHS Local Scholarships</strong><br />
+              </td>
+              <td class="px-3 py-3 text-slate-700"
+                >The MMHS Local Scholarship Application is sent directly to all
+                seniors in mid-March or early April. It covers over 40
+                scholarships specific to MMHS students.<strong
+                  >We strongly encourage all students to apply.</strong
+                ></td
+              >
+              <td class="px-3 py-3 text-slate-700"></td>
+              <td class="px-3 py-3 text-slate-700"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+  </section>
+
+  <section class="not-prose mx-auto max-w-7xl px-4 pt-2 pb-10">
+    <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+      <h3 class="text-lg font-semibold">Additional Resources</h3>
+      <p class="mt-1 text-sm text-slate-500">
+        Students can search for other county, statewide, and national
+        scholarships using:
+      </p>
+      <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-slate-700">
+        <li>
+          <a
+            href="https://www.mainecf.org/find-a-scholarship"
+            class="link"
+            target="_blank"
+          >
+            Maine Community Foundation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.famemaine.com/affording-education/pay-for-school/maine-scholarship-search/?utm_source=chatgpt.com"
+            class="link"
+            target="_blank"
+          >
+            FAME</a
+          >
+        </li>
+        <li>
+          <a href="https://scholarships.com" class="link" target="_blank"
+            >Scholarships.com</a
+          >
+        </li>
+        <li>
+          <a href="https://www.fastweb.com" class="link" target="_blank"
+            >Fastweb</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://bigfuture.collegeboard.org/scholarship-search"
+            class="link"
+            target="_blank">BigFuture by CollegeBoard</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.unigo.com/scholarships/high-school-students/scholarships-for-high-school-seniors"
+            class="link"
+            target="_blank">Unigo</a
+          >
+        </li>
+
+        <li>
+          <a
+            href="https://bigfuture.collegeboard.org/scholarship-search"
+            class="link"
+            target="_blank">BigFuture by CollegeBoard</a
+          >
+        </li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- Featured pop-out -->
+  <section class="not-prose mx-auto max-w-7xl px-4 pt-2 pb-16">
+    <article
+      class="relative rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
+    >
+      <!-- Ribbon -->
+      <span
+        class="absolute -top-3 left-5 inline-flex items-center rounded-full bg-bulldog-orange/10 px-3 py-1 text-xs font-semibold text-bulldog-orange ring-1 ring-bulldog-orange/20"
+      >
+        Important Reminder
+      </span>
+
+      <div class="flex items-start gap-3">
+        <!-- Icon -->
+        <svg
+          class="mt-0.5 h-5 w-5 text-bulldog-orange"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8.257 3.099c.765-1.36 2.72-1.36 3.485 0l6.518 11.596c.75 1.336-.214 3.005-1.742 3.005H3.481c-1.528 0-2.492-1.669-1.742-3.005L8.257 3.1zM11 14a1 1 0 10-2 0 1 1 0 002 0zm-1-2a1 1 0 01-1-1V8a1 1 0 112 0v3a1 1 0 01-1 1z"
+            clip-rule="evenodd"></path>
+        </svg>
+
+        <div class="text-sm text-slate-700">
+          <p class="font-semibold">
+            Never pay for scholarships or financial aid. Legitimate scholarships
+            and federal student aid are always free.
+          </p>
+          <p class="mt-2">
+            If you have questions about a scholarship or need help applying,
+            please stop by the Guidance Office.
+          </p>
+        </div>
+      </div>
+    </article>
   </section>
 </Base>
-

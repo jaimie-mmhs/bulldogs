@@ -1,0 +1,97 @@
+---
+import Base from "~/layouts/BaseLayout.astro";
+import PageHero from "~/components/PageHero.astro";
+import { site } from "~/site.config";
+
+const title = "Page Title";
+const subtitle = "Optional subtitle";
+const description = "Short page description for SEO.";
+
+// Breadcrumbs: last item is current page (no href)
+const breadcrumb = [
+  { label: "Home", href: "/" },
+  { label: "Section", href: "/section" },
+  { label: title },
+];
+---
+
+<Base title={`${title} | ${site.name}`} description={description}>
+  <PageHero title={title} subtitle={subtitle} breadcrumb={breadcrumb} />
+
+  <!-- Long-form content gets Typography styles -->
+  <article
+    class="prose prose-slate md:prose-lg mx-auto max-w-3xl px-4 py-10
+           prose-a:text-bulldog-orange prose-a:no-underline hover:prose-a:underline
+           prose-img:rounded-xl prose-headings:font-semibold"
+  >
+    <h2>HEADING</h2>
+    <p>DESCRIPTION</p>
+  </article>
+
+  <section class="mx-auto max-w-7xl px-4 py-10">
+    <!-- Page content -->
+    <h2 class="text-2xl font-semibold mb-4">LEFT-ALIGNED SECTION HEADING</h2>
+    <p class="text-slate-700">LEFT-ALIGNED CONTENT</p>
+
+    <!--GRID TEMPLATE -->
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <article
+        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
+      >
+        <h3 class="text-lg font-semibold">TITLE - INSIDE GRID</h3>
+        <p class="mt-2 text-sm text-slate-600">DESCRIPTION - INSIDE GRID</p>
+      </article>
+    </div>
+  </section>
+  <!-- END OF GRID -->
+
+  <!-- EXAMPLE TABLE -->
+  <section class="not-prose mx-auto max-w-7xl px-4 pt-2 pb-14">
+    <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+      <h3 class="text-lg font-semibold mb-3">TABLE TITLE</h3>
+
+      <div class="overflow-x-auto">
+        <table class="min-w-full table-auto text-sm">
+          <caption class="sr-only">TABLE CAPTION</caption>
+          <thead class="bg-slate-50 text-slate-700">
+            <tr>
+              <th scope="col" class="px-3 py-2 text-left font-semibold"
+                >HEADER 1</th
+              >
+              <th scope="col" class="px-3 py-2 text-left font-semibold"
+                >HEADER 2</th
+              >
+              <th scope="col" class="px-3 py-2 text-left font-semibold"
+                >HEADER 3</th
+              >
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr class="align-top">
+              <td class="px-3 py-3">
+                <strong>ROW1 COLUMN1</strong><br />
+                <a href="LINK" target="_blank" class="link">TEXT</a>
+              </td>
+              <td class="px-3 py-3 text-slate-700"> ROW1 COLUMN2 </td>
+              <td class="px-3 py-3 text-slate-700">ROW1 COLUMN3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+  </section>
+  <!-- END OF EXAMPLE TABLE -->
+
+  <!-- EXAMPLE BULLETED LIST -->
+  <section class="not-prose mx-auto max-w-7xl px-4 pt-2 pb-10">
+    <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+      <h3 class="text-lg font-semibold">Scholarship Tips</h3>
+      <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-slate-700">
+        <li>ITEM 1</li>
+        <li>ITEM 2</li>
+        <li>ITEM 3</li>
+      </ul>
+    </article>
+  </section>
+  <!-- END OF EXAMPLE BULLETED LIST -->
+</Base>
