@@ -1,22 +1,22 @@
 ---
-import Base from '~/layouts/BaseLayout.astro';
-import PageHero from '~/components/PageHero.astro';
-import { site } from '~/site.config';
+import Base from "~/layouts/BaseLayout.astro";
+import PageHero from "~/components/PageHero.astro";
+import { site } from "~/site.config";
 
-const title = 'CTE';
-const subtitle = 'Career & Technical Education';
+const title = "CTE";
+const subtitle = "Career & Technical Education";
 const description =
-  'High school students choose to enroll in CTE programs because of the incredible opportunities they provide. Students learn on cutting-edge equipment with professional mentors and prepare for college and high-demand careers.';
+  "High school students choose to enroll in CTE programs because of the incredible opportunities they provide. Students learn on cutting-edge equipment with professional mentors and prepare for college and high-demand careers.";
 
 const breadcrumb = [
-  { label: 'Home', href: '/' },
-  { label: title } // current page
+  { label: "Home", href: "/" },
+  { label: "Academics" },
+  { label: title }, // current page
 ];
 ---
-<Base
-  title={`${title} | ${site.name}`}
->
-  <PageHero title={title} subtitle={subtitle} breadcrumb={breadcrumb}/>
+
+<Base title={`${title} | ${site.name}`}>
+  <PageHero title={title} subtitle={subtitle} breadcrumb={breadcrumb} />
 
   <!-- Long-form content gets Typography styles -->
   <article
@@ -26,107 +26,134 @@ const breadcrumb = [
   >
     <h2>About CTE</h2>
     <p>
-      High school students choose to enroll in CTE program because of the incredible 
-      opportunities they provide. Students learn about and use cutting edge equipment 
-      and technologies with professional mentors who are deeply connected in their industry. 
-      CTE programs prepare students for college and a wide range of high-wage and high 
-      demand careers.
+      High school students choose to enroll in CTE program because of the
+      incredible opportunities they provide. Students learn about and use
+      cutting edge equipment and technologies with professional mentors who are
+      deeply connected in their industry. CTE programs prepare students for
+      college and a wide range of high-wage and high demand careers.
     </p>
   </article>
 
-<section class="not-prose mx-auto max-w-7xl px-4 py-8">
-   <h2 class="text-2xl font-semibold mb-4">Programs</h2>
+  <section class="not-prose mx-auto max-w-7xl px-4 py-8">
+    <h2 class="text-2xl font-semibold mb-4">Programs</h2>
 
-    
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- Building Trades -->
-        <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+      <!-- Building Trades -->
+      <article
+        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
+      >
         <h3 class="text-lg font-semibold">Building Trades</h3>
         <p class="mt-2 text-sm text-slate-600">
-            Curious about carpentry, masonry, electrical, and power installation? Dive into building construction and finishing.
+          Curious about carpentry, masonry, electrical, and power installation?
+          Dive into building construction and finishing.
         </p>
-        </article>
+      </article>
 
-        <!-- Health Occupations -->
-        <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+      <!-- Health Occupations -->
+      <article
+        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
+      >
         <h3 class="text-lg font-semibold">Health Occupations</h3>
         <p class="mt-2 text-sm text-slate-600">
-            Explore patient care, medical terminology, and pathways into nursing and allied health careers.
+          Explore patient care, medical terminology, and pathways into nursing
+          and allied health careers.
         </p>
-        </article>
+      </article>
 
-        <!-- Culinary Arts -->
-        <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+      <!-- Culinary Arts -->
+      <article
+        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
+      >
         <h3 class="text-lg font-semibold">Culinary Arts</h3>
         <p class="mt-2 text-sm text-slate-600">
-            Want to become a Chef or a Baker? Learn what it takes to thrive in the culinary industry.
+          Want to become a Chef or a Baker? Learn what it takes to thrive in the
+          culinary industry.
         </p>
-        </article>
+      </article>
 
-        <!-- Criminal Justice -->
-        <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+      <!-- Criminal Justice -->
+      <article
+        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
+      >
         <h3 class="text-lg font-semibold">Criminal Justice</h3>
         <p class="mt-2 text-sm text-slate-600">
-            Interested in police work, investigations, or forensics? Get an introduction to the justice system.
+          Interested in police work, investigations, or forensics? Get an
+          introduction to the justice system.
         </p>
-        </article>
+      </article>
 
-        <!-- Information Technology -->
-        <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+      <!-- Information Technology -->
+      <article
+        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
+      >
         <h3 class="text-lg font-semibold">Information Technology</h3>
         <p class="mt-2 text-sm text-slate-600">
-            Build skills in hardware, software, networking, and cybersecurity fundamentals.
+          Build skills in hardware, software, networking, and cybersecurity
+          fundamentals.
         </p>
-        </article>
+      </article>
 
-        <!-- Automotive Technology -->
-        <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+      <!-- Automotive Technology -->
+      <article
+        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
+      >
         <h3 class="text-lg font-semibold">Automotive Technology</h3>
         <p class="mt-2 text-sm text-slate-600">
-            Learn how modern automobiles work—from engines to diagnostics, troubleshooting, and repair.
+          Learn how modern automobiles work—from engines to diagnostics,
+          troubleshooting, and repair.
         </p>
-        </article>
+      </article>
 
-        <!-- Aquaculture -->
-        <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+      <!-- Aquaculture -->
+      <article
+        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
+      >
         <h3 class="text-lg font-semibold">Aquaculture</h3>
         <p class="mt-2 text-sm text-slate-600">
-            Explore raising 20+ species of marine plants and animals—one of the fastest-growing food sectors.
+          Explore raising 20+ species of marine plants and animals—one of the
+          fastest-growing food sectors.
         </p>
-        </article>
+      </article>
     </div>
-    </section>
-
+  </section>
 
   <!-- Cards/grids shouldn't inherit prose -->
   <section class="mx-auto max-w-7xl px-4 pb-12 not-prose">
     <div class="grid gap-4 sm:grid-cols-2">
-      <a href="/cte/handbook" class="block rounded-xl border p-4 hover:border-bulldog-orange hover:bg-slate-50">
+      <a
+        href="/cte/handbook"
+        class="block rounded-xl border p-4 hover:border-bulldog-orange hover:bg-slate-50"
+      >
         <h4 class="font-semibold">CTE Handbook</h4>
-        <p class="mt-1 text-sm text-slate-600">Policies, expectations, and resources.</p>
+        <p class="mt-1 text-sm text-slate-600">
+          Policies, expectations, and resources.
+        </p>
       </a>
-      <a href="/cte/partners" class="block rounded-xl border p-4 hover:border-bulldog-orange hover:bg-slate-50">
+      <a
+        href="/cte/partners"
+        class="block rounded-xl border p-4 hover:border-bulldog-orange hover:bg-slate-50"
+      >
         <h4 class="font-semibold">Industry Partners</h4>
-        <p class="mt-1 text-sm text-slate-600">Local employers and work-based learning.</p>
+        <p class="mt-1 text-sm text-slate-600">
+          Local employers and work-based learning.
+        </p>
       </a>
     </div>
   </section>
 
   <section class="mx-auto max-w-3xl px-4 pb-12 not-prose">
-  <div class="relative w-full overflow-hidden rounded-xl shadow">
-    <!-- 16:9 ratio box -->
-    <div class="relative h-0" style="padding-top:56.25%;">
-      <iframe
-        class="absolute left-0 top-0 h-full w-full"
-        src="https://www.youtube.com/embed/nmmYOAUeoUM"
-        title="CTE 101"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      ></iframe>
+    <div class="relative w-full overflow-hidden rounded-xl shadow">
+      <!-- 16:9 ratio box -->
+      <div class="relative h-0" style="padding-top:56.25%;">
+        <iframe
+          class="absolute left-0 top-0 h-full w-full"
+          src="https://www.youtube.com/embed/nmmYOAUeoUM"
+          title="CTE 101"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 </Base>

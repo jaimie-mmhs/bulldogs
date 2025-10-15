@@ -8,7 +8,11 @@ const subtitle = "";
 const description = "Maps of the school";
 
 // Breadcrumbs: last item is current page (no href)
-const breadcrumb = [{ label: "Home", href: "/" }, { label: title }];
+const breadcrumb = [
+  { label: "Home", href: "/" },
+  { label: "About" },
+  { label: title },
+];
 ---
 
 <Base title={`${title} | ${site.name}`} description={description}>
