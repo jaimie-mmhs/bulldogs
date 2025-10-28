@@ -1,3 +1,37 @@
-<html>
-  <h1>HI!!!</h1>
-</html>
+---
+import Base from "~/layouts/BaseLayout.astro";
+import PageHero from "~/components/PageHero.astro";
+import { site } from "~/site.config";
+
+const title = "Welding";
+const description = "Metal-joining. Heat-driven.";
+
+// Breadcrumbs: last item is current page (no href)
+const breadcrumb = [
+  { label: "Home", href: "/" },
+  { label: "Academics" },
+  { label: title },
+];
+---
+
+<Base title={`${title} | ${site.name}`} description={description}>
+  <PageHero title={title} breadcrumb={breadcrumb} />
+
+  <article
+    class="prose prose-slate md:prose-lg mx-auto max-w-3xl px-4 py-10
+           prose-a:text-bulldog-orange prose-a:no-underline hover:prose-a:underline
+           prose-img:rounded-xl prose-headings:font-semibold"
+  >
+    <h2>Our Craft</h2>
+    <p>
+      When it comes to job prospects in the near future, the world needs welders and metal fabricators. Students will learn joining metals with heat, using special equipment to perform different welding processes such as oxytocin's-fuel cutting and brazing, gas metal arc and shielded metal arc welding. Problem solving practical mathematics and measurement skills are incorporated into hands-on study and projects.
+    </p>
+  </article>
+
+    <img src="/assets/welderer.jpg" />
+    <img src="/assets/welderman.jpg" />
+
+    </div>
+  </section>
+</Base>
+
