@@ -1,3 +1,37 @@
-<html>
-  <h1>ECE?</h1>
-</html>
+---
+import Base from "~/layouts/BaseLayout.astro";
+import PageHero from "~/components/PageHero.astro";
+import { site } from "~/site.config";
+
+const title = "Early Childhood Education";
+const description = "Nurturing minds. Building futures.";
+
+// Breadcrumbs: last item is current page (no href)
+const breadcrumb = [
+  { label: "Home", href: "/" },
+  { label: "Academics" },
+  { label: title },
+];
+---
+
+<Base title={`${title} | ${site.name}`} description={description}>
+  <PageHero title={title} breadcrumb={breadcrumb} />
+
+  <article
+    class="prose prose-slate md:prose-lg mx-auto max-w-3xl px-4 py-10
+           prose-a:text-bulldog-orange prose-a:no-underline hover:prose-a:underline
+           prose-img:rounded-xl prose-headings:font-semibold"
+  >
+    <h2>Our Focus</h2>
+    <p>
+      The Early Childhood Education program is designed to teach students the aspects of teaching and working with young children, from birth through elementary age. Students will explore career pathways and develop the characteristics of successful teachers and childcare providers through practicums. Applying theoretical concepts to real-life situations, students are able to take what they have learned in the classroom and apply it to their rotation experiences where they learn how to meet the developmental needs and interests of young children in elementary school and daycare settings.
+    </p>
+<img src="/assets/ECE.jpg" />
+  </article>
+
+    
+
+    </div>
+  </section>
+</Base>
+
