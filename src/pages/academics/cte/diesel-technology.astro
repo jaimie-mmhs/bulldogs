@@ -1,3 +1,39 @@
-<html>
-  <h1>Diesel Technology?</h1>
-</html>
+---
+import Base from "~/layouts/BaseLayout.astro";
+import PageHero from "~/components/PageHero.astro";
+import { site } from "~/site.config";
+
+const title = "Diesel Technology";
+const description = "Precision-driven. Skills built.";
+
+// Breadcrumbs: last item is current page (no href)
+const breadcrumb = [
+  { label: "Home", href: "/" },
+  { label: "Academics" },
+  { label: title },
+];
+---
+
+<Base title={`${title} | ${site.name}`} description={description}>
+  <PageHero title={title} breadcrumb={breadcrumb} />
+
+  <article
+    class="prose prose-slate md:prose-lg mx-auto max-w-3xl px-4 py-10
+           prose-a:text-bulldog-orange prose-a:no-underline hover:prose-a:underline
+           prose-img:rounded-xl prose-headings:font-semibold"
+  >
+    <h2>From Engines to Excellence</h2>
+    <p>
+      Medium- and heavy-duty trucks require educated and experienced technicians for their maintenance and repair.
+Students in this program work on late-model trucks and diesel engines to gain this knowledge. They learn electrical and electronic theory, which they apply to computerized control systems used on today’s trucks. They also learn how to service and maintain steering, suspension, chassis and braking systems.
+
+    </p>
+<img src="/assets/diesel.jpg" />
+  </article>
+
+    
+
+    </div>
+  </section>
+</Base>
+
