@@ -1,3 +1,37 @@
-<html>
-  <h1>Automotive Technology?</h1>
-</html>
+---
+import Base from "~/layouts/BaseLayout.astro";
+import PageHero from "~/components/PageHero.astro";
+import { site } from "~/site.config";
+
+const title = "Automotive Technology";
+const description = "Hands-on. Engine-ready.";
+
+// Breadcrumbs: last item is current page (no href)
+const breadcrumb = [
+  { label: "Home", href: "/" },
+  { label: "Academics" },
+  { label: title },
+];
+---
+
+<Base title={`${title} | ${site.name}`} description={description}>
+  <PageHero title={title} breadcrumb={breadcrumb} />
+
+  <article
+    class="prose prose-slate md:prose-lg mx-auto max-w-3xl px-4 py-10
+           prose-a:text-bulldog-orange prose-a:no-underline hover:prose-a:underline
+           prose-img:rounded-xl prose-headings:font-semibold"
+  >
+    <h2>Tech in Action</h2>
+    <p>
+      This program is designed to prepare students for college and career opportunities in the Automotive Industry. Scientific principles and hands-on work are applied to the overall design, operation, and service of modern automobiles.
+    </p>
+<img src="/assets/automotive.jpg" />
+  </article>
+
+    
+
+    </div>
+  </section>
+</Base>
+
