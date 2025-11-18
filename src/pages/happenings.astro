@@ -1,18 +1,18 @@
 ---
 import Base from "~/layouts/BaseLayout.astro";
+import PageHero from "~/components/PageHero.astro";
+import { site } from "~/site.config";
 
 const happenings = [
   {
-    title: "Outdoor pavilion project underway",
-    description:
-      "Earthwork has started on the new outdoor learning pavilion. The space will give classes, clubs, and guests a covered spot for gatherings and performances.",
-    image: "/assets/pavillion.jpg",
+    title: "Chess and gaming club",
+    description: "The DnD club on Friday - wiping out villains with backflips.",
+    image: "/assets/dnd.jpg",
   },
   {
-    title: "Culinary students preparing community meals",
-    description:
-      "Our culinary arts students are partnering with local groups to plan menus, practice kitchen skills, and serve meals to neighbors across Washington County.",
-    image: "/assets/culinary.jpg",
+    title: "Outdoor pavilion project underway",
+    description: "Here is a look at our outdoor pavilion.",
+    image: "/assets/pavillion.jpg",
   },
   {
     title: "JMG leaders organize campus service projects",
@@ -20,56 +20,51 @@ const happenings = [
       "Jobs for Maine's Graduates students are coordinating donation drives, mentoring younger Bulldogs, and keeping the campus looking sharp.",
     image: "/assets/jmg2.jpg",
   },
-  {
-    title: "Hands-on welding practice in the shop",
-    description:
-      "Career and technical education students are logging hours at the welding booths to prepare for industry certifications and future apprenticeships.",
-    image: "/assets/welderman.jpg",
-  },
 ];
+const title = "Bulldog Happenings";
+const subtitle =
+  "Snapshots and stories from around Machias Memorial High School.";
+const description =
+  "See what students and staff are building, creating, and celebrating across campus.";
+const breadcrumb = [{ label: "Home", href: "/" }, { label: title }];
 ---
 
-<Base
-  title="Bulldog Happenings"
-  description="See what students and staff are building, creating, and celebrating across campus."
-  headerTitle="Bulldog Happenings"
-  headerSubtitle="Snapshots and stories from around Machias Memorial High School."
->
-  <article
-    class="prose prose-slate md:prose-lg mx-auto max-w-4xl px-4 py-10 prose-headings:font-semibold prose-img:rounded-2xl"
-  >
-    <p class="text-lg text-slate-700">
-      Our students are busy building, creating, and leading every week. Browse the
-      latest highlights to see how Bulldogs are applying their learning in the
-      classroom, on campus, and across the community.
-    </p>
-  </article>
+<Base title={title} description={description}>
+  <PageHero title={title} subtitle={subtitle} breadcrumb={breadcrumb} />
 
-  <section class="not-prose mx-auto max-w-5xl px-4 pb-12">
+  <section class="not-prose mx-auto max-w-5xl px-4 py-6">
     <div class="relative overflow-hidden rounded-2xl border bg-white shadow">
-      {happenings.map((item, index) => (
-        <figure
-          class={`grid gap-6 md:grid-cols-2 items-center ${index === 0 ? "" : "hidden"}`}
-          data-slide
-          data-index={index}
-        >
-          <img
-            src={item.image}
-            alt={item.title}
-            loading={index === 0 ? "eager" : "lazy"}
-            class="h-full w-full object-cover"
-          />
-          <figcaption class="p-6 md:p-8">
-            <p class="text-sm uppercase tracking-wide text-bulldog-orange font-semibold">
-              Campus spotlight
-            </p>
-            <h2 class="mt-2 text-2xl font-semibold text-slate-900">{item.title}</h2>
-            <p class="mt-3 text-slate-700 leading-relaxed">{item.description}</p>
-          </figcaption>
-        </figure>
-      ))}
+      {
+        happenings.map((item, index) => (
+          <figure
+            class={`grid gap-6 md:grid-cols-2 items-center ${index === 0 ? "" : "hidden"}`}
+            data-slide
+            data-index={index}
+          >
+            <img
+              src={item.image}
+              alt={item.title}
+              loading={index === 0 ? "eager" : "lazy"}
+              class="h-full w-full object-cover"
+            />
+            <figcaption class="p-6 md:p-8">
+              <p class="text-sm uppercase tracking-wide text-bulldog-orange font-semibold">
+                Campus spotlight
+              </p>
+              <h2 class="mt-2 text-2xl font-semibold text-slate-900">
+                {item.title}
+              </h2>
+              <p class="mt-3 text-slate-700 leading-relaxed">
+                {item.description}
+              </p>
+            </figcaption>
+          </figure>
+        ))
+      }
 
-      <div class="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3">
+      <div
+        class="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3"
+      >
         <button
           class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-slate-800 shadow ring-1 ring-black/5 transition hover:bg-white"
           type="button"
@@ -90,35 +85,45 @@ const happenings = [
     </div>
 
     <div class="mt-4 flex justify-center gap-2" aria-label="Slide selection">
-      {happenings.map((_, index) => (
-        <button
-          class={`h-3 w-3 rounded-full bg-slate-300 transition data-[active=true]:bg-bulldog-orange data-[active=true]:w-8`}
-          type="button"
-          aria-label={`Go to slide ${index + 1}`}
-          data-dot
-          data-index={index}
-        ></button>
-      ))}
+      {
+        happenings.map((_, index) => (
+          <button
+            class={`h-3 w-3 rounded-full bg-slate-300 transition data-[active=true]:bg-bulldog-orange data-[active=true]:w-8`}
+            type="button"
+            aria-label={`Go to slide ${index + 1}`}
+            data-dot
+            data-index={index}
+          />
+        ))
+      }
     </div>
   </section>
 
   <section class="not-prose mx-auto max-w-6xl px-4 pb-16">
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {happenings.map((item) => (
-        <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
-          <h3 class="text-lg font-semibold text-slate-900">{item.title}</h3>
-          <p class="mt-2 text-sm text-slate-700 leading-relaxed">{item.description}</p>
-        </article>
-      ))}
+      {
+        happenings.map((item) => (
+          <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
+            <h3 class="text-lg font-semibold text-slate-900">{item.title}</h3>
+            <p class="mt-2 text-sm text-slate-700 leading-relaxed">
+              {item.description}
+            </p>
+          </article>
+        ))
+      }
     </div>
   </section>
 
   <script is:inline>
     (() => {
-      const slides = Array.from(document.querySelectorAll('[data-slide]')) as HTMLElement[];
-      const dots = Array.from(document.querySelectorAll('[data-dot]')) as HTMLElement[];
-      const prev = document.querySelector('[data-prev]');
-      const next = document.querySelector('[data-next]');
+      const slides = Array.from(
+        document.querySelectorAll("[data-slide]")
+      ) as HTMLElement[];
+      const dots = Array.from(
+        document.querySelectorAll("[data-dot]")
+      ) as HTMLElement[];
+      const prev = document.querySelector("[data-prev]");
+      const next = document.querySelector("[data-next]");
       if (!slides.length || !prev || !next) return;
 
       let index = 0;
@@ -127,10 +132,10 @@ const happenings = [
       const show = (newIndex: number) => {
         index = (newIndex + slides.length) % slides.length;
         slides.forEach((slide, i) => {
-          slide.classList.toggle('hidden', i !== index);
+          slide.classList.toggle("hidden", i !== index);
         });
         dots.forEach((dot, i) => {
-          dot.dataset.active = i === index ? 'true' : 'false';
+          dot.dataset.active = i === index ? "true" : "false";
         });
       };
 
@@ -139,17 +144,17 @@ const happenings = [
         timer = window.setInterval(() => show(index + 1), 7000);
       };
 
-      prev.addEventListener('click', () => {
+      prev.addEventListener("click", () => {
         show(index - 1);
         resetTimer();
       });
-      next.addEventListener('click', () => {
+      next.addEventListener("click", () => {
         show(index + 1);
         resetTimer();
       });
       dots.forEach((dot) => {
-        dot.addEventListener('click', () => {
-          const dotIndex = Number(dot.dataset.index ?? '0');
+        dot.addEventListener("click", () => {
+          const dotIndex = Number(dot.dataset.index ?? "0");
           show(dotIndex);
           resetTimer();
         });
