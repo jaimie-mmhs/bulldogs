@@ -11,6 +11,7 @@ export const site = {
   url: 'https://www.mmhsbulldogs.org',  //<-- uncomment when site goes live
   nav: [
     { label: 'Home', href: '/' },
+    { label: 'Happenings', href: '/happenings' },
 
     {
       label: 'Academics',
