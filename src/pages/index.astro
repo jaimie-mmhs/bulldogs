@@ -1,6 +1,25 @@
 ---
 import Base from "~/layouts/BaseLayout.astro";
 import PageHero from "~/components/PageHero.astro";
+
+const happenings = [
+  {
+    title: "Chess and gaming club",
+    description: "The DnD club on Friday - wiping out villains with backflips.",
+    image: "/assets/dnd.jpg",
+  },
+  {
+    title: "Outdoor pavilion project underway",
+    description: "Here is a look at our outdoor pavilion.",
+    image: "/assets/pavillion.jpg",
+  },
+  {
+    title: "JMG leaders organize campus service projects",
+    description:
+      "Jobs for Maine's Graduates students are coordinating donation drives, mentoring younger Bulldogs, and keeping the campus looking sharp.",
+    image: "/assets/jmg2.jpg",
+  },
+];
 ---
 
 <Base title="Home">
@@ -9,39 +28,87 @@ import PageHero from "~/components/PageHero.astro";
     subtitle="Home of the Bulldogs"
   />
 
-  <article
-    class="prose prose-slate md:prose-lg mx-auto max-w-3xl px-4 py-10
-           prose-a:text-bulldog-orange prose-a:no-underline hover:prose-a:underline
-           prose-img:rounded-xl prose-headings:font-semibold"
-  >
-    <h2>Machias Memorial High School</h2>
-    <h3>Keeping it R.E.A.L.</h3>
-    <p>MMHS Graduates are Ready, and Engaged to Advance in Life.</p>
-  </article>
+  <section id="happenings" class="not-prose mx-auto max-w-6xl px-4 py-10">
+    <div class="flex flex-col gap-3 pb-4">
+      <p class="text-sm uppercase tracking-wide text-bulldog-orange font-semibold">
+        Campus spotlight
+      </p>
+      <h2 class="text-3xl font-semibold text-slate-900">Bulldog Happenings</h2>
+      <p class="text-slate-700 leading-relaxed max-w-3xl">
+        Snapshots and stories from around Machias Memorial High School.
+      </p>
+    </div>
 
-  <article
-    class="prose prose-slate md:prose-lg mx-auto max-w-3xl px-4 py-10
-           prose-a:text-bulldog-orange prose-a:no-underline hover:prose-a:underline
-           prose-img:rounded-xl prose-headings:font-semibold"
-  >
-    <h2>Mission Statement</h2>
-    <p>
-      We respect our students as individuals, as members of our Downeast
-      community, and as citizens of the world. We ready students to engage in
-      all aspects of their education and to pursue individual pathways
-      customized with applicable knowledge and skills. In a safe and supportive
-      environment, enhanced by healthy relationships and communication, we
-      prepare students to advance in life.
-    </p>
-  </article>
+    <div class="relative overflow-hidden rounded-2xl border bg-white shadow">
+      {
+        happenings.map((item, index) => (
+          <figure
+            class={`grid gap-6 md:grid-cols-2 items-center ${index === 0 ? "" : "hidden"}`}
+            data-slide
+            data-index={index}
+          >
+            <img
+              src={item.image}
+              alt={item.title}
+              loading={index === 0 ? "eager" : "lazy"}
+              class="h-full w-full object-cover"
+            />
+            <figcaption class="p-6 md:p-8">
+              <h3 class="mt-2 text-2xl font-semibold text-slate-900">
+                {item.title}
+              </h3>
+              <p class="mt-3 text-slate-700 leading-relaxed">
+                {item.description}
+              </p>
+            </figcaption>
+          </figure>
+        ))
+      }
+
+      <div
+        class="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3"
+      >
+        <button
+          class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-slate-800 shadow ring-1 ring-black/5 transition hover:bg-white"
+          type="button"
+          aria-label="Previous slide"
+          data-prev
+        >
+          ‹
+        </button>
+        <button
+          class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-slate-800 shadow ring-1 ring-black/5 transition hover:bg-white"
+          type="button"
+          aria-label="Next slide"
+          data-next
+        >
+          ›
+        </button>
+      </div>
+    </div>
+
+    <div class="mt-4 flex justify-center gap-2" aria-label="Slide selection">
+      {
+        happenings.map((_, index) => (
+          <button
+            class={`h-3 w-3 rounded-full bg-slate-300 transition data-[active=true]:bg-bulldog-orange data-[active=true]:w-8`}
+            type="button"
+            aria-label={`Go to slide ${index + 1}`}
+            data-dot
+            data-index={index}
+          />
+        ))
+      }
+    </div>
+  </section>
 
   <section class="not-prose mx-auto max-w-7xl px-4 py-8">
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
       <article
         class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
       >
-        <h3 class="text-lg font-semibold"> 
-          <a class="link" href="/happenings">Bulldog Happenings</a>
+        <h3 class="text-lg font-semibold">
+          <a class="link" href="#happenings">Bulldog Happenings</a>
         </h3>
         <p class="mt-2 text-sm text-slate-600">
           Catch up on what students and staff are building, creating, and leading
@@ -98,4 +165,51 @@ import PageHero from "~/components/PageHero.astro";
       </article>
     </div>
   </section>
+
+  <script is:inline>
+    (() => {
+      const slides = Array.from(document.querySelectorAll("[data-slide]"));
+      const dots = Array.from(document.querySelectorAll("[data-dot]"));
+      const prev = document.querySelector("[data-prev]");
+      const next = document.querySelector("[data-next]");
+      if (!slides.length || !prev || !next) return;
+
+      let index = 0;
+      let timer;
+
+      const show = (newIndex) => {
+        index = (newIndex + slides.length) % slides.length;
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("hidden", i !== index);
+        });
+        dots.forEach((dot, i) => {
+          dot.dataset.active = i === index ? "true" : "false";
+        });
+      };
+
+      const resetTimer = () => {
+        if (timer) window.clearInterval(timer);
+        timer = window.setInterval(() => show(index + 1), 7000);
+      };
+
+      prev.addEventListener("click", () => {
+        show(index - 1);
+        resetTimer();
+      });
+      next.addEventListener("click", () => {
+        show(index + 1);
+        resetTimer();
+      });
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          const dotIndex = Number(dot.dataset.index ?? "0");
+          show(dotIndex);
+          resetTimer();
+        });
+      });
+
+      show(0);
+      resetTimer();
+    })();
+  </script>
 </Base>
