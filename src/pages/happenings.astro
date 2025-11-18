@@ -114,54 +114,54 @@ const breadcrumb = [{ label: "Home", href: "/" }, { label: title }];
     </div>
   </section>
 
-  <script is:inline>
-    (() => {
-      const slides = Array.from(
-        document.querySelectorAll("[data-slide]")
-      ) as HTMLElement[];
-      const dots = Array.from(
-        document.querySelectorAll("[data-dot]")
-      ) as HTMLElement[];
-      const prev = document.querySelector("[data-prev]");
-      const next = document.querySelector("[data-next]");
-      if (!slides.length || !prev || !next) return;
+    <script is:inline>
+      (() => {
+        const slides = Array.from(
+          document.querySelectorAll("[data-slide]")
+        );
+        const dots = Array.from(
+          document.querySelectorAll("[data-dot]")
+        );
+        const prev = document.querySelector("[data-prev]");
+        const next = document.querySelector("[data-next]");
+        if (!slides.length || !prev || !next) return;
 
-      let index = 0;
-      let timer: number | undefined;
+        let index = 0;
+        let timer;
 
-      const show = (newIndex: number) => {
-        index = (newIndex + slides.length) % slides.length;
-        slides.forEach((slide, i) => {
-          slide.classList.toggle("hidden", i !== index);
-        });
-        dots.forEach((dot, i) => {
-          dot.dataset.active = i === index ? "true" : "false";
-        });
-      };
+        const show = (newIndex) => {
+          index = (newIndex + slides.length) % slides.length;
+          slides.forEach((slide, i) => {
+            slide.classList.toggle("hidden", i !== index);
+          });
+          dots.forEach((dot, i) => {
+            dot.dataset.active = i === index ? "true" : "false";
+          });
+        };
 
-      const resetTimer = () => {
-        if (timer) window.clearInterval(timer);
-        timer = window.setInterval(() => show(index + 1), 7000);
-      };
+        const resetTimer = () => {
+          if (timer) window.clearInterval(timer);
+          timer = window.setInterval(() => show(index + 1), 7000);
+        };
 
-      prev.addEventListener("click", () => {
-        show(index - 1);
-        resetTimer();
-      });
-      next.addEventListener("click", () => {
-        show(index + 1);
-        resetTimer();
-      });
-      dots.forEach((dot) => {
-        dot.addEventListener("click", () => {
-          const dotIndex = Number(dot.dataset.index ?? "0");
-          show(dotIndex);
+        prev.addEventListener("click", () => {
+          show(index - 1);
           resetTimer();
         });
-      });
+        next.addEventListener("click", () => {
+          show(index + 1);
+          resetTimer();
+        });
+        dots.forEach((dot) => {
+          dot.addEventListener("click", () => {
+            const dotIndex = Number(dot.dataset.index ?? "0");
+            show(dotIndex);
+            resetTimer();
+          });
+        });
 
-      show(0);
-      resetTimer();
-    })();
-  </script>
-</Base>
+        show(0);
+        resetTimer();
+      })();
+    </script>
+  </Base>
