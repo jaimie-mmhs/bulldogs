@@ -1,5 +1,6 @@
 ---
 import { site } from '~/site.config';
+import ThemeIcon from './ThemeIcon.astro';
 const nav = site.nav;
 ---
 <header class="bg-white text-slate-800 border-b z-40 relative">
@@ -12,7 +13,9 @@ const nav = site.nav;
     </a>
 
     <!-- Desktop Nav -->
-    <nav class="hidden md:flex gap-6" id="main-nav">
+  <nav class="hidden md:flex gap-6" id="main-nav">
+    <div>
+      <ThemeIcon />
       {nav.map((item) => (
         <div class="relative" data-menu>
           <a
@@ -79,7 +82,8 @@ const nav = site.nav;
           )}
         </div>
       ))}
-    </nav>
+    </div>
+  </nav>
 
     <!-- Mobile hamburger -->
     <button
@@ -283,3 +287,10 @@ const nav = site.nav;
     })();
   </script>
 </header>
+
+<style>
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
