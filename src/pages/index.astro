@@ -4,9 +4,9 @@ import PageHero from "~/components/PageHero.astro";
 
 const happenings = [
   {
-  title: "Óla, Portugal!",
-  description: "Contact Mr. Cobb to learn more about the school trip planned for April 2027!",
-  image: "/assets/porto.jpg",
+    title: "Óla, Portugal!",
+    description: "Contact Mr. Cobb to learn more about the school trip planned for April 2027!",
+    image: "/assets/porto.jpg",
   },
   {
     title: "Chess and gaming club",
@@ -32,20 +32,20 @@ const happenings = [
     title="Machias Memorial High School"
     subtitle="Home of the Bulldogs"
   />
-  
-<!-- Countdown section -->
+
+  <!-- Countdown -->
   <section class="not-prose mx-auto max-w-7xl px-4 py-6">
     <div class="rounded-2xl border bg-slate-50 p-4 text-center shadow-sm">
       <p class="text-sm uppercase tracking-wide text-slate-600">
-        Countdown to Event
+        Countdown to Graduation
       </p>
       <p class="mt-1 text-xl font-semibold text-bulldog-orange">
-        <span id="countdown"></span>
+        <span id="countdown">Loading...</span>
       </p>
     </div>
   </section>
 
-
+  <!-- Happenings / Carousel -->
   <section id="happenings" class="not-prose mx-auto max-w-6xl px-4 py-10">
     <div class="flex flex-col gap-3 pb-4">
       <p class="text-sm uppercase tracking-wide text-bulldog-orange font-semibold">
@@ -58,34 +58,30 @@ const happenings = [
     </div>
 
     <div class="relative overflow-hidden rounded-2xl border bg-white shadow">
-      {
-        happenings.map((item, index) => (
-          <figure
-            class={`grid gap-6 md:grid-cols-2 items-center ${index === 0 ? "" : "hidden"}`}
-            data-slide
-            data-index={index}
-          >
-            <img
-              src={item.image}
-              alt={item.title}
-              loading={index === 0 ? "eager" : "lazy"}
-              class="h-full w-full object-cover"
-            />
-            <figcaption class="p-6 md:p-8">
-              <h3 class="mt-2 text-2xl font-semibold text-slate-900">
-                {item.title}
-              </h3>
-              <p class="mt-3 text-slate-700 leading-relaxed">
-                {item.description}
-              </p>
-            </figcaption>
-          </figure>
-        ))
-      }
+      {happenings.map((item, index) => (
+        <figure
+          class={`grid gap-6 md:grid-cols-2 items-center ${index === 0 ? "" : "hidden"}`}
+          data-slide
+          data-index={index}
+        >
+          <img
+            src={item.image}
+            alt={item.title}
+            loading={index === 0 ? "eager" : "lazy"}
+            class="h-full w-full object-cover"
+          />
+          <figcaption class="p-6 md:p-8">
+            <h3 class="mt-2 text-2xl font-semibold text-slate-900">
+              {item.title}
+            </h3>
+            <p class="mt-3 text-slate-700 leading-relaxed">
+              {item.description}
+            </p>
+          </figcaption>
+        </figure>
+      ))}
 
-      <div
-        class="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3"
-      >
+      <div class="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3">
         <button
           class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-slate-800 shadow ring-1 ring-black/5 transition hover:bg-white"
           type="button"
@@ -106,37 +102,31 @@ const happenings = [
     </div>
 
     <div class="mt-4 flex justify-center gap-2" aria-label="Slide selection">
-      {
-        happenings.map((_, index) => (
-          <button
-            class={`h-3 w-3 rounded-full bg-slate-300 transition data-[active=true]:bg-bulldog-orange data-[active=true]:w-8`}
-            type="button"
-            aria-label={`Go to slide ${index + 1}`}
-            data-dot
-            data-index={index}
-          />
-        ))
-      }
+      {happenings.map((_, index) => (
+        <button
+          class="h-3 w-3 rounded-full bg-slate-300 transition data-[active=true]:bg-bulldog-orange data-[active=true]:w-8"
+          type="button"
+          aria-label={`Go to slide ${index + 1}`}
+          data-dot
+          data-index={index}
+        />
+      ))}
     </div>
   </section>
 
+  <!-- Quick links -->
   <section class="not-prose mx-auto max-w-7xl px-4 py-8">
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
-      <article
-        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
-      >
+      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
         <h3 class="text-lg font-semibold">
           <a class="link" href="#happenings">Bulldog Happenings</a>
         </h3>
         <p class="mt-2 text-sm text-slate-600">
-          Catch up on what students and staff are building, creating, and leading
-          around campus with our weekly photo carousel.
+          Catch up on what students and staff are building, creating, and leading around campus with our weekly photo carousel.
         </p>
       </article>
 
-      <article
-        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
-      >
+      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
         <h3 class="text-lg font-semibold">
           <a class="link" href="/calendar">School Calendar</a>
         </h3>
@@ -145,9 +135,7 @@ const happenings = [
         </p>
       </article>
 
-      <article
-        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
-      >
+      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
         <h3 class="text-lg font-semibold">
           <a class="link" href="https://aos96.powerschool.com">PowerSchool</a>
         </h3>
@@ -156,176 +144,85 @@ const happenings = [
         </p>
       </article>
 
-      <article
-        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
-      >
+      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
         <h3 class="text-lg font-semibold">
-          <a class="link" href="https://bulldogathletics1.com"
-            >Athletics Calendar</a
-          >
+          <a class="link" href="https://bulldogathletics1.com">Athletics Calendar</a>
         </h3>
         <p class="mt-2 text-sm text-slate-600">
           Check out our athletics calendar for up-to-date game schedules
         </p>
       </article>
 
-      <article
-        class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
-      >
+      <article class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md">
         <h3 class="text-lg font-semibold">
-          <a
-            class="link"
-            href="https://docs.google.com/document/d/1SS0neju6cQq42slGNz3x3HSrtkfqMX4d7Q1a9dx7cqE/preview?tab=t.0"
-            >Student Handbook</a
-          >
+          <a class="link" href="https://docs.google.com/document/d/1SS0neju6cQq42slGNz3x3HSrtkfqMX4d7Q1a9dx7cqE/preview?tab=t.0">Student Handbook</a>
         </h3>
         <p class="mt-2 text-sm text-slate-600">View our student handbook</p>
       </article>
     </div>
   </section>
 
+  <!-- Client-side scripts -->
   <script is:inline>
-  (() => {
-    // ===== Carousel logic =====
-    const carousel = document.getElementById("happenings");
-    if (!carousel) return;
+    document.addEventListener("DOMContentLoaded", () => {
+      // ===== Carousel =====
+      const carousel = document.getElementById("happenings");
+      if (!carousel) return;
 
-    const slides = Array.from(carousel.querySelectorAll("[data-slide]"));
-    const dots = Array.from(carousel.querySelectorAll("[data-dot]"));
-    const prev = carousel.querySelector("[data-prev]");
-    const next = carousel.querySelector("[data-next]");
-    if (!slides.length || !prev || !next) return;
-
-    let index = 0;
-    let timer;
-
-    const show = (newIndex) => {
-      index = (newIndex + slides.length) % slides.length;
-      slides.forEach((slide, i) =>
-        slide.classList.toggle("hidden", i !== index)
-      );
-      dots.forEach((dot, i) => {
-        dot.dataset.active = i === index ? "true" : "false";
-      });
-    };
-
-    const resetTimer = () => {
-      if (timer) clearInterval(timer);
-      timer = setInterval(() => show(index + 1), 7000);
-    };
-
-    prev.addEventListener("click", () => {
-      show(index - 1);
-      resetTimer();
-    });
-
-    next.addEventListener("click", () => {
-      show(index + 1);
-      resetTimer();
-    });
-
-    dots.forEach((dot) => {
-      dot.addEventListener("click", () => {
-        const dotIndex = Number(dot.dataset.index ?? "0");
-        show(dotIndex);
-        resetTimer();
-      });
-    });
-
-    show(0);
-    resetTimer();
-
-    // ===== Countdown logic =====
-    const countdownEl = document.getElementById("countdown");
-    if (!countdownEl) return;
-
-    const targetDate = new Date("2026-06-07T00:00:00").getTime();
-
-    const updateCountdown = () => {
-      const diff = targetDate - Date.now();
-
-      if (diff <= 0) {
-        countdownEl.textContent = "Graduation! 🎉";
-        clearInterval(countdownTimer);
-        return;
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      countdownEl.textContent =
-        `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    };
-
-    const countdownTimer = setInterval(updateCountdown, 1000);
-    updateCountdown();
-  })();
-</script>
+      const slides = Array.from(carousel.querySelectorAll("[data-slide]"));
+      const dots = Array.from(carousel.querySelectorAll("[data-dot]"));
+      const prev = carousel.querySelector("[data-prev]");
+      const next = carousel.querySelector("[data-next]");
+      if (!slides.length || !prev || !next) return;
 
       let index = 0;
       let timer;
 
       const show = (newIndex) => {
         index = (newIndex + slides.length) % slides.length;
-        slides.forEach((slide, i) => {
-          slide.classList.toggle("hidden", i !== index);
-        });
-        dots.forEach((dot, i) => {
-          dot.dataset.active = i === index ? "true" : "false";
-        });
+        slides.forEach((slide, i) => slide.classList.toggle("hidden", i !== index));
+        dots.forEach((dot, i) => (dot.dataset.active = i === index ? "true" : "false"));
       };
 
       const resetTimer = () => {
-        if (timer) window.clearInterval(timer);
-        timer = window.setInterval(() => show(index + 1), 7000);
+        if (timer) clearInterval(timer);
+        timer = setInterval(() => show(index + 1), 7000);
       };
 
-      prev.addEventListener("click", () => {
-        show(index - 1);
-        resetTimer();
-      });
-      next.addEventListener("click", () => {
-        show(index + 1);
-        resetTimer();
-      });
-      dots.forEach((dot) => {
-        dot.addEventListener("click", () => {
-          const dotIndex = Number(dot.dataset.index ?? "0");
-          show(dotIndex);
-          resetTimer();
-        });
-      });
+      prev.addEventListener("click", () => { show(index - 1); resetTimer(); });
+      next.addEventListener("click", () => { show(index + 1); resetTimer(); });
+      dots.forEach(dot => dot.addEventListener("click", () => { show(Number(dot.dataset.index ?? "0")); resetTimer(); }));
 
       show(0);
       resetTimer();
 
-// ===== Countdown logic =====
+      // ===== Countdown =====
+      const countdownEl = document.getElementById("countdown");
+      if (!countdownEl) return;
+
+      const targetDate = new Date("2026-06-07T00:00:00").getTime();
+
       const updateCountdown = () => {
-  const now = Date.now();
-  const diff = targetDate - now;
+        const diff = targetDate - Date.now();
+        if (diff <= 0) {
+          countdownEl.textContent = "Graduation! 🎉";
+          clearInterval(countdownTimer);
+          return;
+        }
 
-  if (diff <= 0) {
-    countdownEl.textContent = "Graduation! 🎉";
-    clearInterval(countdownTimer);
-    return;
-  }
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
 
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
+        countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      };
 
-  countdownEl.textContent =
-    `${days}d ${hours}h ${minutes}m ${seconds}s`;
-};
-
-const countdownTimer = window.setInterval(updateCountdown, 1000);
-
-updateCountdown();
-
-
-    })();
+      const countdownTimer = setInterval(updateCountdown, 1000);
+      updateCountdown();
+    });
   </script>
 </Base>
+
+
+
