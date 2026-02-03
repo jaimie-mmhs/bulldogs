@@ -97,7 +97,8 @@ const happenings = [
           </figure>
         ))
       }
-
+      <!-- 2/3/26 pointer-events-none on the div lets the clicks "pass through" the empty space of the button container 
+        was previously not clickable because of the carousel controls -->
       <div
         class="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3 pointer-events-none"
       >
@@ -109,6 +110,7 @@ const happenings = [
         >
           ‹
         </button>
+        <!-- 2/3/26 added pointer-events-auto  This ensures the buttons themselves still work -->
         <button
           class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-slate-800 shadow ring-1 ring-black/5 transition hover:bg-white pointer-events-auto"
           type="button"
