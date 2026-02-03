@@ -7,7 +7,8 @@ const happenings = [
     title: "MMHS Bulldogs YouTube Channel",
     description: "Watch our Bulldog sporting events live on our ",
     image: "/assets/youtube.jpg",
-    url: '<a href="https://www.youtube.com/@MMHSBulldogs">YouTube Channel</a>!',
+    linkText: "YouTube Channel!",
+    url: "https://www.youtube.com/@MMHSBulldogs",
   },
   {
     title: "Óla, Portugal!",
@@ -85,7 +86,15 @@ const happenings = [
                 {item.title}
               </h3>
               <p class="mt-3 text-slate-700 leading-relaxed">
-                {item.description} {item.url}
+                {item.description}
+                {item.url && ( //if item.url is not blank, then print the link
+                  <a
+                    href={item.url}
+                    class="text-bulldog-orange hover:underline font-bold"
+                  >
+                    {item.linkText || "Link"}
+                  </a>
+                )}
               </p>
             </figcaption>
           </figure>
