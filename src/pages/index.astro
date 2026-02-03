@@ -5,9 +5,9 @@ import PageHero from "~/components/PageHero.astro";
 const happenings = [
   {
     title: "MMHS Bulldogs YouTube Channel",
-    description:
-      'Watch our Bulldog sporting events live on our <h3><a href="https://www.youtube.com/@MMHSBulldogs">YouTube channel</a></h3>!',
+    description: "Watch our Bulldog sporting events live on our ",
     image: "/assets/youtube.jpg",
+    url: '<a href="https://www.youtube.com/@MMHSBulldogs">YouTube Channel</a>!',
   },
   {
     title: "Óla, Portugal!",
@@ -85,7 +85,7 @@ const happenings = [
                 {item.title}
               </h3>
               <p class="mt-3 text-slate-700 leading-relaxed">
-                {item.description}
+                {item.description} {item.url}
               </p>
             </figcaption>
           </figure>
