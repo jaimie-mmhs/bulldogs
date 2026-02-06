@@ -33,6 +33,7 @@ export const site = {
         { label: 'History', href: '/about/history' },
         { label: 'Staff', href: '/about/staff' },
         { label: 'Map', href: '/about/map' }
+        { label: 'Employment', href: '/about/employment' }
       ]
     },
 
