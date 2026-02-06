@@ -32,7 +32,7 @@ export const site = {
         { label: 'Mission', href: '/about/mission' },
         { label: 'History', href: '/about/history' },
         { label: 'Staff', href: '/about/staff' },
-        { label: 'Map', href: '/about/map' }
+        { label: 'Map', href: '/about/map' },
         { label: 'Employment', href: '/about/employment' }
       ]
     },
