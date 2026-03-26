@@ -56,6 +56,7 @@ export const site = {
         { label: 'Change of Address', href: 'https://forms.gle/DttSs3cXXvytjUNi9' },
         { label: 'SAT Saturday Registration', href: 'https://www.collegeboard.org/' },
         { label: 'Student Emergency Form', href: 'https://forms.gle/ws3bMPCUqmBwjekTA' },
+        { label: 'Student Request for Excused Absence', href: 'https://drive.google.com/file/d/1Gq02xfX53RteurDu1QmqIRDy-NmGlq5Y/view' },
 
         // Group: Seniors (no href on the group)
         {
