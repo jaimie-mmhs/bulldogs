@@ -14,7 +14,16 @@ const breadcrumb = [{ label: "Home", href: "/" }, { label: title }];
 <Base title={`${title} | ${site.name}`} description={description}>
   <PageHero title={title} subtitle={subtitle} breadcrumb={breadcrumb} />
 
- <img src="/assets/2627 Calendar.png" />
+ <article
+    class="prose prose-slate md:prose-lg mx-auto max-w-3xl px-4 py-10
+           prose-a:text-bulldog-orange prose-a:no-underline hover:prose-a:underline
+           prose-img:rounded-xl prose-headings:font-semibold"
+  >
+    <h2>AOS 96 Calendar '26/'27</h2>
+
+    <img src="/assets/2627 Calendar.png" />
+
+  </article>
 
   <section class="mx-auto max-w-5xl px-4 py-8">
     <div class="aspect-video w-full">
