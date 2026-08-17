@@ -1,0 +1,50 @@
+---
+import Base from "~/layouts/BaseLayout.astro";
+import PageHero from "~/components/PageHero.astro";
+import { site } from "~/site.config";
+
+const title = "Device Policy";
+const subtitle = "";
+const description = "";
+
+// Breadcrumbs: last item is current page (no href)
+const breadcrumb = [
+  { label: "Home", href: "/" },
+  { label: "About" },
+  { label: title },
+];
+---
+
+<Base title={`${title} | ${site.name}`} description={description}>
+  <PageHero title={title} subtitle={subtitle} breadcrumb={breadcrumb} />
+
+  <!-- Long-form content gets Typography styles -->
+
+  <article
+    class="prose prose-slate md:prose-lg mx-auto max-w-3xl px-4 py-10
+           prose-a:text-bulldog-orange prose-a:no-underline hover:prose-a:underline
+           prose-img:rounded-xl prose-headings:font-semibold"
+  >
+    <h2>Personal Electronic Device Policy c. 2026</h2>
+    <p>
+      As we prepare for the upcoming school year, we want to remind families about our Personal Electronic Device (PED) policy.
+    </p>
+    <p>
+      All personal electronic devices - including cell phones, smartwatches, wireless earbuds, and similar devices - must be turned off and securely stored in students' assigned lockers from 7:00 a/m/ through 2:20 p.m.
+    </p>
+    <p>
+      Every student will be assigned a locker. Students who bring a personal electronic device to school must turn the device off before the start of the school day, secure the device in their assigned locker, and keep the device stored in the locker throughout the school day.
+    </p>
+    <p>
+      We appreciate the support of our families as we work together to create a focused, respectful, and distraction-free learning environment for all students. 
+    </p>
+    <p>
+      For mfurther information regarding the implementation of Maine's bell-to-bell personal electronic device policy, please visit the following website: 
+    </p>
+    <ul>
+       <li>
+         <a href="https://mainedoenews.net/2026/05/20/priority-notice-implementation-of-maines-bell-to-bell-personal-electronic-device-policy/">Maine DOE News</a>
+       </li>
+    </ul>
+  </article>
+</Base>
