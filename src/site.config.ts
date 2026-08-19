@@ -58,6 +58,7 @@ export const site = {
         { label: 'SAT Saturday Registration', href: 'https://www.collegeboard.org/' },
         { label: 'Student Emergency Form', href: 'https://forms.gle/ws3bMPCUqmBwjekTA' },
         { label: 'Student Request for Excused Absence', href: 'https://drive.google.com/file/d/1Gq02xfX53RteurDu1QmqIRDy-NmGlq5Y/view' },
+        { label: 'Student Vehicle Registration', href: 'https://drive.google.com/file/d/1QOpcDnlj4lVr18ymSqp0PCiLMLMNFw_v/view?usp=sharing' },
 
         // Group: Seniors (no href on the group)
         {
