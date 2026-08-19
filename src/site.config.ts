@@ -30,6 +30,7 @@ export const site = {
       //href: '/about',
       children: [
         { label: 'Mission', href: '/about/mission' },
+        { label: 'Personal Electronic Device Policy', href: '/about/devicepolicy'},
         { label: 'History', href: '/about/history' },
         { label: 'Staff', href: '/about/staff' },
         { label: 'Map', href: '/about/map' },

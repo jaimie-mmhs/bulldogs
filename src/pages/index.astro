@@ -5,7 +5,8 @@ import PageHero from "~/components/PageHero.astro";
 const happenings = [
   {
     title: "MMHS Bulldogs YouTube Channel",
-    description: "Watch our Bulldog sporting events live or rewatch past games on our ",
+    description:
+      "Watch our Bulldog sporting events live or rewatch past games on our ",
     image: "/assets/youtube.jpg",
     linkText: "YouTube Channel!",
     url: "https://www.youtube.com/@MMHSBulldogs",
@@ -64,9 +65,11 @@ const happenings = [
       >
         Important Notice
       </p>
-      <h2 class="text-3xl font-semibold text-slate-900">A Reminder from the Principal</h2>
+      <h2 class="text-3xl font-semibold text-slate-900">
+        A Reminder from the Principal
+      </h2>
       <p class="text-slate-700 leading-relaxed max-w-3xl">
-        Please visit our Mission page for an important reminder regarding personal electronic devices.
+        Please see an important reminder regarding personal electronic devices.
       </p>
     </div>
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
@@ -74,11 +77,12 @@ const happenings = [
         class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
       >
         <h3 class="text-lg font-semibold">
-          <a class="link" href="https://www.mmhsbulldogs.org/about/mission/">Mission</a>
+          <a
+            class="link"
+            href="https://www.mmhsbulldogs.org/about/devicepolicy/"
+            >Personal Electronic Device Policy</a
+          >
         </h3>
-        <p class="mt-2 text-sm text-slate-600">
-          MMHS Mission Statement
-        </p>
       </article>
     </div>
   </section>
@@ -234,13 +238,13 @@ const happenings = [
         class="rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
       >
         <h3 class="text-lg font-semibold">
-          <a
-            class="link"
-            href="https://www.mmhsbulldogs.org/meals/"
+          <a class="link" href="https://www.mmhsbulldogs.org/meals/"
             >Monthly Lunch Menu</a
           >
         </h3>
-        <p class="mt-2 text-sm text-slate-600">Take a look at what the culinary department is cooking up</p>
+        <p class="mt-2 text-sm text-slate-600">
+          Take a look at what the culinary department is cooking up
+        </p>
       </article>
     </div>
   </section>
@@ -264,10 +268,10 @@ const happenings = [
       const show = (newIndex) => {
         index = (newIndex + slides.length) % slides.length;
         slides.forEach((slide, i) =>
-          slide.classList.toggle("hidden", i !== index)
+          slide.classList.toggle("hidden", i !== index),
         );
         dots.forEach(
-          (dot, i) => (dot.dataset.active = i === index ? "true" : "false")
+          (dot, i) => (dot.dataset.active = i === index ? "true" : "false"),
         );
       };
 
@@ -288,7 +292,7 @@ const happenings = [
         dot.addEventListener("click", () => {
           show(Number(dot.dataset.index ?? "0"));
           resetTimer();
-        })
+        }),
       );
 
       show(0);
