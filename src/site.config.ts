@@ -33,7 +33,7 @@ export const site = {
         { label: 'Personal Electronic Device Policy', href: '/about/devicepolicy'},
         { label: 'History', href: '/about/history' },
         { label: 'Staff', href: '/about/staff' },
-        { label: 'Map', href: '/about/map' },
+        { label: 'Campus', href: '/about/map' },
         { label: 'Employment', href: '/about/employment' }
       ]
     },
