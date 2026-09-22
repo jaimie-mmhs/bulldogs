@@ -42,6 +42,19 @@ const breadcrumb = [{ label: "Home", href: "/" }, { label: title }];
 <Base title={title} description={description}>
   <PageHero title={title} subtitle={subtitle} breadcrumb={breadcrumb} />
 
+  <div class="mx-auto max-w-5xl px-4 py-10">
+    <div class="grid gap-8 lg:grid-cols-[1.65fr_1fr] items-start">
+      <article
+        class="prose prose-slate md:prose-lg
+               prose-a:text-bulldog-orange prose-a:no-underline hover:prose-a:underline
+               prose-img:rounded-xl prose-headings:font-semibold"
+      >
+        <h2>2026 Homecoming Schedule</h2>
+        <img src="/assets/2026hoco.jpg" class="rounded-xl shadow" />
+      </article>
+      </div>
+    </div>
+
   <section class="not-prose mx-auto max-w-5xl px-4 py-6">
     <div class="relative overflow-hidden rounded-2xl border bg-white shadow">
       {
@@ -175,3 +188,5 @@ const breadcrumb = [{ label: "Home", href: "/" }, { label: title }];
       })();
     </script>
   </Base>
+
+
