@@ -22,7 +22,7 @@ export const site = {
         { label: 'Special Education', href: 'https://www.aos96.org/special-education-services' },
         { label: 'JMG', href: '/academics/jmg' },
         { label: 'Guidance', href: '/academics/guidance' },
-        { label: 'Program of Studies', href: 'https://docs.google.com/document/d/12DVNjFiYbQSyr3XrwH_DezlyS13hRJbL/edit?usp=sharing&ouid=107638723808840372796&rtpof=true&sd=true' }
+        { label: 'Program of Studies', href: 'https://docs.google.com/document/d/12DVNjFiYbQSyr3XrwH_DezlyS13hRJbL/preview' }
       ]
     },
 
