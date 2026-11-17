@@ -3,22 +3,11 @@ import Base from "~/layouts/BaseLayout.astro";
 import PageHero from "~/components/PageHero.astro";
 
 const happenings = [
+
   {
-    title: "Open House ",
+    title: "Winter Sports Tryouts!",
     description:
-      "On 11/12/26 there will be an Open House at Machias Memorial High School. Bring your parents and students to come check out MMHS we’ll see you there!",
-    image: "/assets/openhouse.jpg",
-  },
-  {
-    title: "Community Service Day",
-    description: 
-      "On 11/13/26, There will be a community service day at the school you will be working with your homebase to make the earth a little cleaner so make sure to attend!",
-    image: "/assets/csd.jpg",
-  },
-  {
-    title: "Winter Sports Signups!",
-    description:
-      "Winter sports signups begin on Thursday, November 19th. Don't forget, physicals are required to be eligible for tryouts!",
+      "Winter sports tryouts begin on Monday, November 16th. Don't forget, physicals are required to be eligible for tryouts!",
     image: "/assets/tryouts.jpg",
   },
   {
@@ -69,17 +58,17 @@ const happenings = [
   <iframe src="https://www.youtube.com/embed/m6CUiuNGio8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 </section>
 
-  <!-- Countdown
+<Countdown>
   <section class="not-prose mx-auto max-w-7xl px-4 py-6">
     <div class="rounded-2xl border bg-slate-50 p-4 text-center shadow-sm">
       <p class="text-sm uppercase tracking-wide text-slate-600">
-        Countdown to Back to School!
+        Countdown to Christmas Day!
       </p>
       <p class="mt-1 text-xl font-semibold text-bulldog-orange">
         <span id="countdown">Loading...</span>
       </p>
     </div>
-  </section> -->
+  </section>
 
   <!-- Happenings / Carousel -->
   <section id="happenings" class="not-prose mx-auto max-w-6xl px-4 py-10">
@@ -326,12 +315,12 @@ const happenings = [
       const countdownEl = document.getElementById("countdown");
       if (!countdownEl) return;
 
-      const targetDate = new Date("2026-09-01T00:00:00").getTime();
+      const targetDate = new Date("2026-12-25T00:00:00").getTime();
 
       const updateCountdown = () => {
         const diff = targetDate - Date.now();
         if (diff <= 0) {
-          countdownEl.textContent = "Back to School! 🎉";
+          countdownEl.textContent = "Christmas Day! 🎉";
           clearInterval(countdownTimer);
           return;
         }
@@ -349,5 +338,3 @@ const happenings = [
     });
   </script>
 </Base>
-
-
